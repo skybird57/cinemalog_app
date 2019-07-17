@@ -42,6 +42,10 @@ INSTALLED_APPS = [
     'django_jalali',  # use persian datetime
     'rangefilter', # use in model admin giftAdmin
     'rest_framework', # use for rest apis
+    'rest_framework.authtoken', # for token auth
+    'rest_auth', # for token auth 
+    'rest_framework_swagger', # #for dodumentation of API in url
+    'graphene_django', #use for graphql api
 ]
 
 MIDDLEWARE = [

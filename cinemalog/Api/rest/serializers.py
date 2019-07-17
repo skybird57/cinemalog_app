@@ -15,7 +15,8 @@ class SendpushSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class ApplicationVersionSerializer(serializers.ModelSerializer):
-    user=serializers.CharField(read_only=True,source='user.usermane')
+    #becuase we put manualy the user_id
+    #user=serializers.CharField(read_only=True,source='user.usermane')
     class Meta:
         model=ApplicationVersion
         fields='__all__'

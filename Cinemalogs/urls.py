@@ -15,8 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import include
+from django.conf.urls import include,url
 from django.utils.translation import ugettext
+from django.conf.urls.static import static
+from . import settings
+from rest_framework_swagger.views import get_swagger_view  # user for swagger docs
+from rest_framework.documentation import include_docs_urls  # use for core-docs apis
+schema_view = get_swagger_view(title='Polls API')
 
 #change ‘Django administration’ text
 admin.site.site_header = ugettext("Cinema-log Admin")
@@ -27,4 +32,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('cinemalog/',include('cinemalog.urls')),
     path('user/',include('users.urls')),
+      #docs of api /swagger-docs/
+    url(r'swagger-docs/', schema_view),
+    url(r'core-docs/', include_docs_urls(title='Polls API')),
 ]
+
+#show cover-video in dialog when you click on it
+urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)

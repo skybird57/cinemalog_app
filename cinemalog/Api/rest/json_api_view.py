@@ -5,7 +5,17 @@ from cinemalog.Api.rest.permissions import check_permissions
 from cinemalog.Api.rest import json_api
 
 
+import base64
+from django.contrib.auth import authenticate
 
+def header_auth_view(request):
+    auth_header = request.META['HTTP_AUTHORIZATION']
+    encoded_credentials = auth_header.split(' ')[1]  # Removes "Basic " to isolate credentials
+    decoded_credentials = base64.b64decode(encoded_credentials).decode("utf-8").split(':')
+    username = decoded_credentials[0]
+    password = decoded_credentials[1]
+    feed_bot = authenticate(username=username, password=password)
+    return feed_bot
 def index(request):
 
     html=''
@@ -26,13 +36,10 @@ def json_list(request):
         return JsonResponse(data,safe=False)
     
     elif request.method=='POST':
-        return HttpResponse(request)
-        data=JSONParser().parse(request)
-        return HttpResponse(data)
-        if check_permissions(request.user,'cinemalog.add_applicationversion'):
+        if True: #check_permissions(request.user,'cinemalog.add_applicationversion'):
             data=JSONParser().parse(request)
-            #data=json_api.json_create(data,request.user)
-            return JsonResponse(request.user,safe=False)
+            data=json_api.json_create(data)
+            return JsonResponse(data,safe=False)
         return JsonResponse('Dont have permission to add')  
 
 @csrf_exempt
@@ -47,7 +54,7 @@ def json_detail(request, pk):
 
     elif request.method=='PUT':
         data=JSONParser().parse(request)
-        data=json_api.json_update(data,request.user,pk)
+        data=json_api.json_update(data,pk)
         return JsonResponse(data,safe=False)
     elif request.method=='DELETE':
         data= json_api.json_delete(request,pk)

@@ -1,12 +1,14 @@
 from rest_framework import mixins,generics
-from rest_framework import permissions
+from rest_framework import permissions,authentication
 from cinemalog.models import Video
 from cinemalog.Api.rest.serializers import VideoSerializer
 from cinemalog.Api.rest.permissions import IsOwnerOrReadOnly
 
+# in this view user token auth
 
 class Video_list(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericAPIView):
-    permission_classes=(permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
+    authentication_class=(authentication.TokenAuthentication,)
+    #permission_classes=(permissions.IsAuthenticated,)
     queryset=Video.objects.all()
     serializer_class=VideoSerializer
 
@@ -19,7 +21,7 @@ class Video_list(mixins.ListModelMixin,mixins.CreateModelMixin,generics.GenericA
         serializer.save(user=self.request.user)
 
 class Video_detail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.DestroyModelMixin,generics.GenericAPIView):
-    permission_classes=(permissions.IsAuthenticatedOrReadOnly,IsOwnerOrReadOnly)
+    authentication_class=(authentication.TokenAuthentication,)
     queryset=Video.objects.all()
     serializer_class=VideoSerializer
 
@@ -29,16 +31,3 @@ class Video_detail(mixins.RetrieveModelMixin,mixins.UpdateModelMixin,mixins.Dest
         return self.update(request,*args,**kwargs)
     def delete(self,request,*args,**kwargs):
         return self.destroy(request,*args,**kwargs)
-
-
-#highlight
-from rest_framework import renderers
-from rest_framework.response import Response
-
-class VideoHighlight(generics.GenericAPIView):
-    queryset = Video.objects.all()
-    renderer_classes = (renderers.StaticHTMLRenderer,)
-
-    def get(self, request, *args, **kwargs):
-        video = self.get_object()
-        return Response(video.film_name)

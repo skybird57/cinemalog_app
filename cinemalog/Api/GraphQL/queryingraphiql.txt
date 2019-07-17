@@ -1,0 +1,61 @@
+#get
+{
+	allSendpush{
+  	id
+  	title
+  	content
+  	platformIos
+  	platformAndroid
+} 
+  sendpushDetail(id:2){
+    title
+  }
+
+}
+
+
+
+#create
+
+mutation createSendpush{
+  createSendpush(input: {
+  	title:"pushql",
+  	content:"sgsgrg",
+    platformIos:false,
+    platformAndroid:false,
+    userId:1
+  }){
+  	sendpush{
+    	title
+    }
+  }
+}
+
+#update
+
+mutation updateSendpush{
+  updateSendpush(id:9,input: {
+  	title:"pushql",
+  	content:"sgsgrg",
+    platformIos:true,
+    platformAndroid:true,
+    userId:1
+  }){
+  	sendpush{
+    	title
+      content
+      platformIos
+      platformAndroid
+    }
+  }
+}
+
+#destroy
+
+mutation DestroySendpush{
+  destroySendpush(id:8){
+  	sendpush{
+    	title
+    }
+  }
+}

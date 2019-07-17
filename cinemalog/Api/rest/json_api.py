@@ -11,21 +11,21 @@ def check_permission(user,permission):
         else: 
             return False
 
-#list of videos        
+#list of application        
 def json_list():
         instance=ApplicationVersion.objects.all()
         serializer_instance=ApplicationVersionSerializer(instance,many=True)
         return serializer_instance.data
    
-#create new video
-def json_create(data,user):
+#create new application
+def json_create(data):
     serializer_instance=ApplicationVersionSerializer(data=data)
     if serializer_instance.is_valid():
-        serializer_instance.save(user=user)
+        serializer_instance.save()
         return serializer_instance.data
     return serializer_instance.errors
 
-# get video for detail,update,delete
+# get application for detail,update,delete
 def get_record(pk):
     try:
         instance=ApplicationVersion.objects.get(pk=pk)
@@ -33,7 +33,7 @@ def get_record(pk):
         return None
     return instance
 
-# video detail
+# application detail
 def json_detail(pk): 
     instance=get_record(pk) 
     if  not instance:  
@@ -42,19 +42,19 @@ def json_detail(pk):
     return serializer_instance.data
             
 
-# video update
-def json_update(data,user,pk):
+# application update
+def json_update(data,pk):
     instance=get_record(pk)
     if  not instance:  
         return '404---- the id is invalid'
 
     serializer_instance=ApplicationVersionSerializer(instance,data=data)
     if serializer_instance.is_valid():
-        serializer_instance.save(user=user)
+        serializer_instance.save()
         return serializer_instance.data
     return serializer_instance.errors
 
-#delete video
+#delete application
 def json_delete(request,pk):
     instance=get_record(pk)
     if  not instance:  
