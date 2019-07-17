@@ -156,3 +156,16 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
+
+# baraye kar ba graphene
+GRAPHENE = {
+    'SCHEMA': 'CinemaLogs.schema.schema',
+    'MIDDLEWARE': [
+        'graphql_jwt.middleware.JSONWebTokenMiddleware',
+    ],
+}
+AUTHENTICATION_BACKENDS = [
+    'graphql_jwt.backends.JSONWebTokenBackend',
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+    #or 'django.contrib.auth.backends.ModelBackend',
+]
