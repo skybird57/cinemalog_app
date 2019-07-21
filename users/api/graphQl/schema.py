@@ -4,16 +4,16 @@ from django.contrib.auth import get_user_model
 
 
 # create type of table
-class UserType(DjangoObjectType):
+class AdminUserType(DjangoObjectType):
     class Meta:
         model=get_user_model()
 
 
 class Query(graphene.AbstractType):
-    userList=graphene.List(UserType)
-    userDetail=graphene.Field(UserType,id=graphene.Int())
+    userList=graphene.List(AdminUserType)
+    userDetail=graphene.Field(AdminUserType,id=graphene.Int())
     #use for authentication, show you are logined or not
-    userLogin=graphene.Field(UserType)
+    userLogin=graphene.Field(AdminUserType)
 
     def resolve_userList(self,info):
         return get_user_model().objects.all()
@@ -33,7 +33,7 @@ class UserInput(graphene.InputObjectType):
     password=graphene.String()
 
 class CreateUser(graphene.Mutation):
-    user=graphene.Field(UserType)
+    user=graphene.Field(AdminUserType)
     class Arguments:
         input=UserInput()
 

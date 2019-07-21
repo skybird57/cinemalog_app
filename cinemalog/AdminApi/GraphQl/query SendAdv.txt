@@ -1,0 +1,50 @@
+query sendadvlist{
+  sendAdvs{
+    id
+    title
+    content
+    pic
+    platformIos
+    platformAndroid
+  }
+  sendAdvDetail(id:15){
+    title
+  }
+}
+mutation createsendadv{
+  createSendadv(input:{
+    title:"IOS",
+    content:"fargagag",
+    advType:"introduce app",
+    link:"http://localhost:8000/admin/cinemalog/sendadv/add/"
+    pic:"hezarpa.jpg",
+    platformIos:true,
+    platformAndroid:false
+  }){
+    sendadv{
+      title
+    }
+  }
+}
+
+mutation updatesendadv{
+  updateSendadv(id:16,input:{
+    title:"IOS",
+ 		content:"fargagag",
+    platformIos:true,
+    platformAndroid:true
+  }){
+    sendadv{
+      title
+    }
+  }
+}
+  
+  
+mutation destroysendadv{
+  destroySendadv(id:15){
+    sendadv{
+      title
+    }
+  }
+}

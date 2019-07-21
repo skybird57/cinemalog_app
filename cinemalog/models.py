@@ -91,8 +91,8 @@ class SendPush(models.Model):
 
 class SendAdv(models.Model):
     ADV_TYPE=(
-        ('معرفی اپلیکیشن','معرفی اپلیکیشن'),
-        ('معرفی بازی','معرفی بازی')
+        ('introduce app','معرفی اپلیکیشن'),
+        ('introduce game','معرفی بازی')
     )
     title=models.CharField(_('sendadvtitle'),max_length=30)
     content=models.TextField(_('sendadvcontent'),max_length=200)
@@ -109,15 +109,15 @@ class SendAdv(models.Model):
         verbose_name_plural=_('SendAdv')            
 
 class ApplicationVersion(models.Model):
-    PLATFORM=(('Android','Android'),('IOS','IOS'))
-    platform=models.CharField(_('applicationplatform'),choices=PLATFORM,max_length=10)
-    require_version=models.FloatField(_('applicationrequire'),max_length=5)        
+    PLATFORM=((1,'Android'),(2,'IOS'))
+    platform=models.IntegerField(_('applicationplatform'),choices=PLATFORM)
+    required_version=models.FloatField(_('applicationrequire'),max_length=5)        
     last_version=models.FloatField(_('applicationlast'),max_length=5)
     generated_at=jmodels.jDateField(_('applicationgeneratedate'))
     user=models.ForeignKey(User,on_delete=models.CASCADE,verbose_name=_('user_id'))
 
     def __str__(self):
-        return self.platform+'_____'+str(self.last_version)
+        return str(self.platform)+'_____'+str(self.last_version)
     class Meta:
         verbose_name=_('ApplicationVersion')
         verbose_name_plural=_('ApplicationVersions')

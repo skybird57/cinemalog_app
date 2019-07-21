@@ -135,17 +135,47 @@ class SendPushAdmin(admin.ModelAdmin):
         elif obj.platform_android:
             obj.content+="   this push is sending for Android devices"   
 
-
         return super().save_model(request, obj, form, change)
 
 class SendAdvAdmin(admin.ModelAdmin):
-    list_display=('title','content','adv_type','platform_android','platform_ios')
+    list_display=('title','content','adv_type','platform_android','platform_ios','load_pic')
     list_filter=('platform_android','platform_ios','adv_type')
     search_fields=('title','content')
     prepopulated_fields={'content':('title',)}
 
+    def load_pic(self,obj):  
+        from django.utils.safestring import mark_safe
+        from Cinemalogs.settings import URL_ADV
+        path=URL_ADV+str(obj.pic)+'/'+str(obj.pic)
+        #print(path)
+        #use when save by save_mode
+        return mark_safe('<img src="{}" width=100px height=100px/>'.format(path))
+    load_pic.allow_tag=True
+
+    def save_model(self, request, obj, form, change):   
+        from django.core.files.storage import FileSystemStorage
+        from Cinemalogs.settings import ROOT_ADV 
+        fs=FileSystemStorage(location=ROOT_ADV+'\\'+str(obj.pic))
+        pic=request.FILES['pic']
+        obj.pic=fs.save(pic.name,pic)
+        return super().save_model(request, obj, form, change)
+        
+    def delete_model(self, request, obj):
+        from django.core.files.storage import FileSystemStorage
+        from Cinemalogs.settings import ROOT_ADV
+        import shutil
+        location=ROOT_ADV+'\\'+str(obj.pic)
+        print("location:    ",location)
+        try:
+            location=ROOT_ADV+'\\'+str(obj.pic)
+            print("location:    ",location)
+            shutil.rmtree(location)
+        except OSError as e:
+            return e
+        return super().delete_model(request, obj)
+
 class ApplicationVersionAdmin(admin.ModelAdmin):
-    list_display=('platform','require_version','last_version','generated_at')
+    list_display=('platform','required_version','last_version','generated_at')
     list_filter=(('generated_at',JDateFieldListFilter),'platform')
     search_fields=('require_version','last_version')
     exclude=('user',)

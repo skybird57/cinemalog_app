@@ -15,7 +15,6 @@ class Query(ObjectType):
 
     def resolve_sendpush_detail(self,info,id=None,**kwargs):
         if id is not None:
-            print('iddddddddddddddd',id)
             return SendPush.objects.get(pk=id)
 
 #create,update,destroy data   (POST PUT DELETE methods)

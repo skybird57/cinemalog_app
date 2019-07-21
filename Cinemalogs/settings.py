@@ -144,6 +144,8 @@ STATIC_URL = '/static/'
 #save files and pics from cinemalog(video_table)
 MEDIA_URL="/media/"
 MEDIA_ROOT=os.path.join(BASE_DIR,'media')
+URL_ADV="/adv/"
+ROOT_ADV=os.path.join(BASE_DIR,'adv')
 
 # baraye inke har kari khastim bokonim hatman bayad login shode bashim
 REST_FRAMEWORK = {

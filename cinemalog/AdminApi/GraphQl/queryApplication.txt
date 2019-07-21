@@ -1,0 +1,37 @@
+mutation createapp {
+  createApp(input: {
+    platform:1,
+    requiredVersion: 3.6,
+    lastVersion: 3.8,
+    generatedAt: "1398-05-20"}) {
+    app {
+      id
+      platform
+      requiredVersion
+      lastVersion
+    }
+  }
+}
+
+mutation updateapp {
+  updateApp(id: 5, input: {
+    platform: 1, 
+    requiredVersion: 3.7,
+    lastVersion: 3.8,
+    generatedAt: "1398-05-20"}) {
+    app {
+      id
+      platform
+      requiredVersion
+      lastVersion
+    }
+  }
+}
+
+mutation destroyapp {
+  destroyApp(id: 6) {
+    app {
+      platform
+    }
+  }
+}

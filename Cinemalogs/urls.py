@@ -39,3 +39,4 @@ urlpatterns = [
 
 #show cover-video in dialog when you click on it
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
+urlpatterns+=static(settings.URL_ADV,document_root=settings.ROOT_ADV)

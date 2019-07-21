@@ -5,7 +5,7 @@ from graphene_django.views import GraphQLView  #use for graphql urls
 from django.views.decorators.csrf import csrf_exempt # that you need to disable the Django CSRF protection.
 from Cinemalogs.schema import schema
 
-
+#from graphene_file_upload.django import FileUploadGraphQLView
 '''
 from graphene_django.views import GraphQLView
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
