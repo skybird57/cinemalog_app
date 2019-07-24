@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'rest_auth', # for token auth 
     'rest_framework_swagger', # #for dodumentation of API in url
     'graphene_django', #use for graphql api
+    'bs4',
 ]
 
 MIDDLEWARE = [
@@ -132,7 +133,7 @@ USE_TZ = True
 
 #dadane masire file po va mo
 LOCALE_PATHS = (
-    os.path.join('Hoshmand_Tadbir', '../locale'),
+    os.path.join('Cinemalogs', '../locale'),
 )
 
 

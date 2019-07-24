@@ -1,18 +1,19 @@
 from django.contrib import admin
 from django.contrib.auth.models import Group,User  #unregister
-from users.models import User,UserToken
+from users.models import CustomUser,CustomUserToken
+from django_jalali.admin import jDateTimeField,JDateFieldListFilter
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    display_list=('username','phone')
-    pass
-
+    list_display=('phone','username',)
+    list_filter=(('created_at',JDateFieldListFilter),)
+    search_fields=('phone',)
 class UserTokenAdmin(admin.ModelAdmin):
-    display_list=('user','token')
-    pass
+    list_display=('token','user',)
+ 
 
 #register
-admin.site.register(User,UserAdmin)
-admin.site.register(UserToken,UserTokenAdmin)
+admin.site.register(CustomUser,UserAdmin)
+admin.site.register(CustomUserToken,UserTokenAdmin)
 #unregister
 admin.site.unregister(Group)

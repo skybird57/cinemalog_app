@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Video,Competition,Question,Gift,SendPush,SendAdv,ApplicationVersion,News
+from .models import Video,VideoView,Competition,Question,Gift,SendPush,SendAdv
+from .models import ApplicationVersion,News,NewsView
 from django_jalali.admin import JDateFieldListFilter # user persian calendar in search admin
 from rangefilter.filter import DateRangeFilter  #range for date,pip install django-admin-rangefilter
 from django import forms #use in modelform
@@ -26,18 +27,12 @@ class VideoForm(ModelForm):
         }
 class VideoAdmin(admin.ModelAdmin):
     form=VideoForm
-    #tarz namayesh dar we admin
-    list_display=('film_name','published','published_at','adminCoverVideo','create_at')
-    #namayesh tarikh jalali
-    list_filter=(('create_at',JDateFieldListFilter),'published')
+    list_display=('film_name','published','published_at','adminCoverVideo','create_at','view')
+    list_filter=(('create_at',JDateFieldListFilter),'published')#namayesh tarikh jalali
     search_fields=('film_name',)
-    #sakht action balaye safhe
-    actions=['make_published']
-    # be sorat id nmayesh bede
-    #raw_id_fields=('user',)
-    #fied user_id ro neshon nade
-    exclude=('user','published','published_at','create_at')
-    #exclude=(,)
+    #raw_id_fields=('user',)  # be sorat id nmayesh bede
+    exclude=('user','published','published_at','create_at','view') #fied haro neshon nade
+    actions=['make_published']   #sakht action balaye safhe
 
     def make_published(modeladmin,request,queryset):
         if 'cinemalog.publish_video' in request.user.get_all_permissions():
@@ -86,18 +81,32 @@ class VideoAdmin(admin.ModelAdmin):
         except OSError as e:
             return e
         return super().delete_model(request, obj)
+class VideoViewAdmin(admin.ModelAdmin):
+    list_display=('user','video','viewAt')
 
 class CompetitionAdmin(admin.ModelAdmin):
-    #tarz namayesh dar we admin
-    list_display=('title','create_at','list_questions')
-    #namayesh tarikh jalali
-    list_filter=(('create_at',JDateFieldListFilter),)
+    list_display=('title','created_at','list_questions','release')#tarz namayesh dar we admin
+    exclude=('created_at',)
+    list_filter=(('created_at',JDateFieldListFilter),)#namayesh tarikh jalali
+    actions=['released']
+    def released(modeladmin,request,queryset):
+        if 'cinemalog.release_competition' in request.user.get_all_permissions():
+            queryset.update(release=True,release_date=datetime.today())
+    released.allow_tag=True
+    def get_actions(self, request):
+        return super(CompetitionAdmin,self).get_actions(request)
+        if 'cinemalog.release_competition' not in request.user.get_all_permissions():
+             del actions['released']
+        return actions
 
-    def list_questions(self,obj):
+    def list_questions(self,obj): #connect list to question
         link=reverse("admin:cinemalog_question_changelist")
         return format_html('<a href="{0}?q={1}">لیست سوالات {2} </a>'.format(link, obj.title,obj.title   ))
-    list_questions.allow_tags=True   
-    #list_questions=_('list_ques')  
+    list_questions.allow_tags=True  # add tag connection
+
+    def save_model(self, request, obj, form, change): # custom save model
+        obj.created_at=datetime.today()
+        return super().save_model(request, obj, form, change)
 
 class QuestionAdmin(admin.ModelAdmin):
     #tarz namayesh dar we admin
@@ -186,18 +195,21 @@ class ApplicationVersionAdmin(admin.ModelAdmin):
 
 class NewsAdmin(admin.ModelAdmin):
     #fields=('title','admin_image',)
-    list_display=('title','desc','admin_image','published_at')
+    list_display=('title','desc','admin_image','published_at','view')
     readonly_fields=('admin_image',)
     search_fields=('title','desc',)
     list_filter=('published_at',)
     def admin_image(self,obj):
         from django.utils.safestring import mark_safe
-        return mark_safe('<img src="{}" width=144px/>'.format(obj.image))
+        return mark_safe('<img src="{}" width=124px/>'.format(obj.image))
     #admin_image.short_description="Image"    
     admin_image.allow_tag=True 
+class NewsViewAdmin(admin.ModelAdmin):
+    list_display=('user','news')
 
    
 admin.site.register(Video,VideoAdmin)
+admin.site.register(VideoView,VideoViewAdmin)
 admin.site.register(Competition,CompetitionAdmin)
 admin.site.register(Question,QuestionAdmin)
 admin.site.register(Gift,GiftAdmin)
@@ -205,3 +217,4 @@ admin.site.register(SendPush,SendPushAdmin)
 admin.site.register(SendAdv,SendAdvAdmin)
 admin.site.register(ApplicationVersion,ApplicationVersionAdmin)
 admin.site.register(News,NewsAdmin)
+admin.site.register(NewsView,NewsViewAdmin)

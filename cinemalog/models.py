@@ -1,7 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User #use for 
+from users.models import CustomUser
 from django_jalali.db import models as jmodels  #user persian datetime
-from django.utils.translation import gettext as _  #use for translation
+from django.utils.translation import ugettext as _  #use for translation
 from Cinemalogs.settings import MEDIA_ROOT
 
 # Create your models here.
@@ -25,8 +26,8 @@ class Video(models.Model):
     #save by admin.py method save
     #file_name=models.FileField(_('videofilename'),max_length=50)
     #cover_video=models.FileField(_('videocver'),blank=True,null=True,max_length=50)
-     
-    user=models.ForeignKey(User,on_delete=models.CASCADE,verbose_name=_('user_id'))
+    view=models.IntegerField(_('Videoview'),default=0) 
+    user=models.ForeignKey(User,on_delete=models.CASCADE,verbose_name=_('Videouser_id'))
     #or
     #from django.conf import settings
     #user=models.ForeignKey(settings.AUTH_USER_MODEL,on_delete=models.CASCADE,verbose_name=_('user_id'))
@@ -35,19 +36,36 @@ class Video(models.Model):
         return self.film_name+'-'+self.desc
 
     class Meta:
-        permissions=(('publish_video','Can publish video'),
-        )
+        permissions=(('publish_video','Can publish video'),)
         verbose_name=_("Video")
         verbose_name_plural=_("Videos")
+
+# register user views of videos
+class VideoView(models.Model):
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('user_id'))
+    video=models.ForeignKey(Video,on_delete=models.CASCADE,verbose_name=('video_id'))
+    viewAt=jmodels.jDateField(_('VideoViewveiwAt'))
+    
+    def __str__(self):
+        return str(self.user)+str(self.video)+str(self.viewAt)
+    
+    class Meta:
+        verbose_name=_('Video user view')
+        verbose_name_plural=_('Video user views')
 
 class Competition(models.Model):
     title=models.CharField(_('competitiontitle'),max_length=50)
     #estefade az tarikh jalali
-    create_at=jmodels.jDateField(_('competitioncreatedate'))
-    
+    release_date=jmodels.jDateField(_('competitionreleasedate'),blank=True, null=True)
+    release=models.BooleanField(_('competitonrelease'),default=False)
+    created_at=jmodels.jDateField(_('competitioncreatedat'))
+    updated_at=jmodels.jDateField(_('competitionupdatedat'),blank=True, null=True)
+    deleted_at=jmodels.jDateField(_('competitiondeletedat'),blank=True, null=True)
+    user=models.ForeignKey(User,on_delete=models.CASCADE)
     def __str__(self):
         return self.title
     class Meta:
+        permissions=(('release_competition','Can release competiton'),)
         verbose_name=_("Competition")
         verbose_name_plural=_("Competitions")    
 
@@ -128,6 +146,7 @@ class News(models.Model):
     image=models.URLField(_('newsimage'),null=True)
     source=models.URLField(_('newssource'),null=True)
     published_at=models.CharField(_('newspublished'),max_length=100,null=True,blank=True)
+    view=models.IntegerField(_('Newsview'),default=0)
 
     def __str__(self):
         return self.title+'    '+self.published_at
@@ -135,3 +154,16 @@ class News(models.Model):
     class Meta:
         verbose_name=_('News')
         verbose_name_plural=_('News')                       
+
+# register user views of news
+class NewsView(models.Model):
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('user_id'))
+    news=models.ForeignKey(News,on_delete=models.CASCADE,verbose_name=('news_id'))
+    viewAt=jmodels.jDateField(_('NewsViewveiwAt'))
+    
+    def __str__(self):
+        return str(self.user)+str(self.news)+str(self.viewAt)
+    
+    class Meta:
+        verbose_name=_('News user view')
+        verbose_name_plural=_('News user views')

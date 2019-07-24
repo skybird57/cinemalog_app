@@ -4,25 +4,25 @@ from django.utils.translation import ugettext as _
 
 # Create your models here
 
-class User(models.Model):
-    username=models.CharField(_('username'),max_length=30,blank=True, null=True)
-    phone=models.CharField(_('phone'),max_length=11)
-    image=models.FileField(_('image'),blank=True, null=True)
-    address=models.TextField(_('address'),max_length=300,blank=True, null=True)
-    notification_status=models.BooleanField(_('notification_status'),default=False)
-    created_at=jmodel.jDateTimeField(_('create_at'),blank=True, null=True)
-    updated_at=jmodel.jDateTimeField(_('updated_at'),blank=True, null=True)
+class CustomUser(models.Model):
+    username=models.CharField(_('Userusername'),max_length=30,blank=True, null=True)
+    phone=models.CharField(_('Userphone'),max_length=11,unique=True)
+    image=models.FileField(_('Userimage'),blank=True, null=True)
+    address=models.TextField(_('Useraddress'),max_length=300,blank=True, null=True)
+    notification_status=models.BooleanField(_('Usernotification_status'),default=False)
+    created_at=jmodel.jDateTimeField(_('Usercreate_at'),blank=True, null=True)
+    updated_at=jmodel.jDateTimeField(_('Userupdated_at'),blank=True, null=True)
 
 
     def __str__(self):
         return self.phone
     class Meta:
-        verbose_name=_('User')
-        verbose_name_plural=_('Users')
+        verbose_name=_('CustomUser')
+        verbose_name_plural=_('CustomUsers')
 
-class UserToken(models.Model):
-    token=models.TextField(_('token'),max_length=500)
-    user=models.ForeignKey(User,on_delete=models.CASCADE,verbose_name=_('user_id'))
+class CustomUserToken(models.Model):
+    token=models.TextField(_('Tokentoken'),max_length=500,unique=True)
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('Tokenuser_id'))
 
     def __str__(self):
         return self.token

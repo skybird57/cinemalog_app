@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from cinemalog.models import ApplicationVersion,Video,Question
+from cinemalog.models import ApplicationVersion,Video,Question,News
 
 class VideoSerializer(serializers.ModelSerializer):
     user=serializers.CharField(read_only=True,source='user.username')
@@ -18,4 +18,9 @@ class ApplicationSerializer(serializers.ModelSerializer):
 class QuestionSerializer(serializers.ModelSerializer):
     class Meta:
         model=Question
+        fields='__all__'
+
+class NewsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=News
         fields='__all__'
