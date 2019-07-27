@@ -1,4 +1,4 @@
-from cinemalog.Api.rest.serializers import ApplicationVersionSerializer
+from cinemalog.AdminApi.Rest.serializers import ApplicationVersionSerializer
 from cinemalog.models import ApplicationVersion
 from django.http import HttpResponse
 

@@ -1,6 +1,6 @@
 from django.contrib import admin
 from .models import Video,VideoView,Competition,Question,Gift,SendPush,SendAdv
-from .models import ApplicationVersion,News,NewsView
+from .models import UserAnswer,ApplicationVersion,News,NewsView
 from django_jalali.admin import JDateFieldListFilter # user persian calendar in search admin
 from rangefilter.filter import DateRangeFilter  #range for date,pip install django-admin-rangefilter
 from django import forms #use in modelform
@@ -86,7 +86,7 @@ class VideoViewAdmin(admin.ModelAdmin):
 
 class CompetitionAdmin(admin.ModelAdmin):
     list_display=('title','created_at','list_questions','release')#tarz namayesh dar we admin
-    exclude=('created_at',)
+    exclude=('created_at','user')
     list_filter=(('created_at',JDateFieldListFilter),)#namayesh tarikh jalali
     actions=['released']
     def released(modeladmin,request,queryset):
@@ -106,6 +106,7 @@ class CompetitionAdmin(admin.ModelAdmin):
 
     def save_model(self, request, obj, form, change): # custom save model
         obj.created_at=datetime.today()
+        obj.user=request.user
         return super().save_model(request, obj, form, change)
 
 class QuestionAdmin(admin.ModelAdmin):
@@ -113,14 +114,19 @@ class QuestionAdmin(admin.ModelAdmin):
     list_display=('question','correct_answer','link_competition')
     #tabdile key khareji jadvale question be title dar jadvale competition
     def link_competition(self,obj):
-        link= reverse("admin:cinemalog_competition_change", args=[obj.Competition.id]) #model name has to be lowercase
+        link= reverse("admin:cinemalog_competition_change", args=[obj.competition.id]) #model name has to be lowercase
         #return u'%s' % (obj.Competition.title)
-        return format_html('<a href="{}"> {}</a>', link, obj.Competition.title)
+        return format_html('<a href="{}"> {}</a>', link, obj.competition.title)
     link_competition.allow_tags=True
 
     Ordering=('competition_id',)
-    list_filter=('Competition__title',)
-    search_fields=('Competition__title','question','correct_answer')
+    list_filter=('competition__title',)
+    search_fields=('competition__title','question','correct_answer')
+
+class UserAnswerAdmin(admin.ModelAdmin):
+    list_display=('user','competition','question','answer',)
+    search_fields=('user__phone','competition__title','question__question',)
+    list_filter=('competition__title',)
 
 class GiftAdmin(admin.ModelAdmin):
     list_display=('title','desc','deliverDate')
@@ -212,6 +218,7 @@ admin.site.register(Video,VideoAdmin)
 admin.site.register(VideoView,VideoViewAdmin)
 admin.site.register(Competition,CompetitionAdmin)
 admin.site.register(Question,QuestionAdmin)
+admin.site.register(UserAnswer,UserAnswerAdmin)
 admin.site.register(Gift,GiftAdmin)
 admin.site.register(SendPush,SendPushAdmin) 
 admin.site.register(SendAdv,SendAdvAdmin)

@@ -72,7 +72,7 @@ class Competition(models.Model):
 class Question(models.Model):
     SCORE_CORRECT_ANSWER=((1,1),(2,2),(3,3),(4,4),(5,5))
     SCORE_WRONG_ANSWER=((-1,-1),(-2,-2),(-3,-3),(-4,-4),(-5,-5))
-    Competition=models.ForeignKey(Competition,on_delete=models.CASCADE)
+    competition=models.ForeignKey(Competition,on_delete=models.CASCADE)
     question=models.TextField(_('questionuestion'),max_length=100)
     answer1=models.CharField(_('questionanswer1'),max_length=30)
     answer2=models.CharField(_('questionanswer2'),max_length=30)
@@ -81,12 +81,26 @@ class Question(models.Model):
     correct_answer=models.CharField(_('questioncorrect'),max_length=30)
     score_ca=models.IntegerField(_('questionscore_ca'),null=True,choices=SCORE_CORRECT_ANSWER)
     score_wa=models.IntegerField(_('questionscore_wa'),null=True,choices=SCORE_WRONG_ANSWER)
-    
+    created_at=jmodels.jDateField(_('Questioncreatedat'))
+    user=models.ForeignKey(User,on_delete=models.CASCADE,verbose_name=_('user_id'))
+
     def __str__(self):
         return self.question
     class Meta:
         verbose_name=_("Question")
-        verbose_name_plural=_("Questions")    
+        verbose_name_plural=_("Questions")   
+
+class UserAnswer(models.Model):
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('user_id')) 
+    competition=models.ForeignKey(Competition,on_delete=models.CASCADE)
+    question=models.ForeignKey(Question,on_delete=models.CASCADE)
+    answer=models.CharField(_('Answeranswer'),max_length=50)
+
+    def __str__(self):
+        return self.answer
+    class Meta:
+        verbose_name=_("UserAnswer")
+        verbose_name_plural=_("UserAnswers")   
 
 class Gift(models.Model):
     title=models.CharField(_('gifttitle'),max_length=30)

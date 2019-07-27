@@ -1,8 +1,8 @@
 from rest_framework import mixins,generics
 from rest_framework import permissions,authentication
 from cinemalog.models import Video
-from cinemalog.Api.rest.serializers import VideoSerializer
-from cinemalog.Api.rest.permissions import IsOwnerOrReadOnly
+from cinemalog.AdminApi.Rest.serializers import VideoSerializer
+from cinemalog.AdminApi.Rest.permissions import IsOwnerOrReadOnly
 
 # in this view user token auth
 

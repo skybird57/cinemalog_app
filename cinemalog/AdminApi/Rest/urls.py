@@ -1,9 +1,9 @@
 from django.urls import path,include
 from django.conf.urls import url
-from cinemalog.Api.rest import json_api_view as jviews
-from cinemalog.Api.rest import api_api_view as aviews
-from cinemalog.Api.rest import api_view as avviews
-from cinemalog.Api.rest import mixin_api,generic_api
+from cinemalog.AdminApi.Rest import json_api_view as jviews
+from cinemalog.AdminApi.Rest import api_api_view as aviews
+from cinemalog.AdminApi.Rest import api_view as avviews
+from cinemalog.AdminApi.Rest import mixin_api,generic_api
 urlpatterns=[
     path('index',jviews.index,name='index rest api'),
     #json api urls
@@ -37,10 +37,12 @@ urlpatterns+=[url(r'^rest-auth/', include('rest_auth.urls'))]
 
 # using router for viewset
 from rest_framework.routers import DefaultRouter
-from cinemalog.Api.rest import viewset_api 
+from cinemalog.AdminApi.Rest import viewset_api 
+from users.AdminApi.Rest import viewsetUser
 router=DefaultRouter()
 router.register(r'questions',viewset_api.QuestionViewSet)
 router.register(r'competitions',viewset_api.CompetitionViewSet)
-
+router.register(r'Video',viewset_api.VideoViewSet)
+router.register(r'User',viewsetUser.AdminUserViewSet)
 urlpatterns+=[path('',include(router.urls)),]
 

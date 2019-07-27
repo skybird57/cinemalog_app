@@ -22,11 +22,13 @@ class ApplicationVersionSerializer(serializers.ModelSerializer):
         fields='__all__'
 
 class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+    user=serializers.CharField(read_only=True,source='user.username')
     class Meta:
         model=Question
         fields='__all__'
 
 class CompetitionSerializer(serializers.HyperlinkedModelSerializer):
+    user=serializers.CharField(read_only=True,source='user.username')
     class Meta:
         model=Competition
-        fields='__all__'
+        fields=('title','release','release_date','updated_at','deleted_at','user')

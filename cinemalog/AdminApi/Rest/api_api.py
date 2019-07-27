@@ -1,5 +1,5 @@
 from cinemalog.models import SendPush
-from cinemalog.Api.rest.serializers import SendpushSerializer
+from cinemalog.AdminApi.Rest.serializers import SendpushSerializer
 from rest_framework import status
 from rest_framework.response import Response
 

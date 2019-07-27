@@ -3,8 +3,8 @@ from rest_framework import status # use in returns
 from rest_framework import permissions # use for class permission
 from rest_framework.response import Response  # use for returns
 from rest_framework.reverse import reverse # use for api root
-from cinemalog.Api.rest import api_api
-from cinemalog.Api.rest.permissions import check_permissions 
+from cinemalog.AdminApi.Rest import api_api
+from cinemalog.AdminApi.Rest.permissions import check_permissions 
 
 
 # this api is class bases

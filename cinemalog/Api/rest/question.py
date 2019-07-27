@@ -7,19 +7,24 @@ from users.Api.Rest.checkUserToken import checkUserToken
 
 class QuestionList(APIView):
     def get(self, request,format=None):
-        userid=request.query_params.get('userid')
+        userId=request.query_params.get('userid')
         token=request.query_params.get('token')
-        if not checkUserToken(userid,token):
-             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)        
-        instance=Question.objects.all()
-        serializer_instance=QuestionSerializer(instance,many=True)
-        return Response(serializer_instance.data,status=status.HTTP_200_OK)
-        
+        compId=request.query_params.get('compId')
+        if not checkUserToken(userId,token):
+             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST) 
+        if compId is not None:
+            try:       
+                instance=Question.objects.filter(competition_id=compId)
+                serializer_instance=QuestionSerializer(instance,many=True)
+                return Response(serializer_instance.data,status=status.HTTP_200_OK)
+            except Question.DoesNotExist:
+                pass
+        return Response("Competition ID is invalid",status=status.HTTP_400_BAD_REQUEST)
 class QuestionDeatail(APIView):
     def get(self,request,id,format=None):
-        userid=request.query_params.get('userid')
+        userId=request.query_params.get('userid')
         token=request.query_params.get('token')
-        if not checkUserToken(userid,token):
+        if not checkUserToken(userId,token):
              return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
         if id is not None:    
             try:
@@ -28,4 +33,4 @@ class QuestionDeatail(APIView):
                 return Response(serializer_instance.data,status=status.HTTP_200_OK)
             except Question.DoesNotExist:
                 pass
-        return Response("ID is invalid",status=status.HTTP_400_BAD_REQUEST)
+        return Response("Question ID is invalid",status=status.HTTP_400_BAD_REQUEST)

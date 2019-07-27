@@ -3,8 +3,8 @@ from rest_framework.decorators import api_view # use befor defs
 from rest_framework.response import Response  # use in returns
 from rest_framework.reverse import reverse # use in api_root
 from rest_framework import status # use in returns
-from cinemalog.Api.rest import api_api 
-from cinemalog.Api.rest.permissions import check_permissions 
+from cinemalog.AdminApi.Rest import api_api 
+from cinemalog.AdminApi.Rest.permissions import check_permissions 
 
 
 @api_view(['GET','POST'])

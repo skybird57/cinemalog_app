@@ -33,6 +33,7 @@ urlpatterns=[
     path('index/',views.index,name='cinemalog index'),
     path('crawlNews/',views.crawlNews,name='crawl news'),  # crawl news
     path('api/',include('cinemalog.Api.rest.urls')),
+    path('adminapi/',include('cinemalog.AdminApi.Rest.urls')),
     path('graphql/',csrf_exempt(GraphQLView.as_view(
         graphiql=True,
         schema=schema))),

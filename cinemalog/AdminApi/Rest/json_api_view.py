@@ -1,8 +1,8 @@
 from django.http import HttpResponse,JsonResponse # use in returns
 from django.views.decorators.csrf import csrf_exempt # use befor defs for security
 from rest_framework.parsers import JSONParser # use to parse json
-from cinemalog.Api.rest.permissions import check_permissions
-from cinemalog.Api.rest import json_api
+from cinemalog.AdminApi.Rest.permissions import check_permissions
+from cinemalog.AdminApi.Rest import json_api
 
 
 import base64

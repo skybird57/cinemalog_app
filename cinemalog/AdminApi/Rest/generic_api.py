@@ -1,7 +1,7 @@
 from rest_framework import generics
 from cinemalog.models import Video
-from cinemalog.Api.rest.serializers import VideoSerializer
-from cinemalog.Api.rest.permissions import IsOwnerOrReadOnly
+from cinemalog.AdminApi.Rest.serializers import VideoSerializer
+from cinemalog.AdminApi.Rest.permissions import IsOwnerOrReadOnly
 from rest_framework import permissions
 
 # in this view use base auth
