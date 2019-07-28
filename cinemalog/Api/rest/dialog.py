@@ -13,7 +13,7 @@ class VideoList(APIView):
         userId=request.query_params.get('userid')  #get user
         token=request.query_params.get('token')   # get token
         if not checkUserToken(userId,token):  # check if ok
-            return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
+            return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)
         instance=Video.objects.all()   # get all records
         serializer_instance=VideoSerializer(instance,many=True)   # serialize all record
         return Response(serializer_instance.data,status=status.HTTP_200_OK)  # return all records
@@ -24,7 +24,7 @@ class VideoDetail(APIView):
         userId=request.query_params.get('userid')  # get user
         token=request.query_params.get('token')  # get token
         if not checkUserToken(userId,token):   # check if ok
-            return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
+            return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)
         if id is not None:
             try:
                 instance=Video.objects.get(pk=id)  # get record

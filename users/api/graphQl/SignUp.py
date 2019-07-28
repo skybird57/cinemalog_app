@@ -31,6 +31,7 @@ def createuser(phone):
     try:
         user=CustomUser()
         user.phone=phone
+        user.created_at=datetime.today()
         user.save()
         if createtoken(user.id):
             return user

@@ -11,12 +11,12 @@ class CustomUser(models.Model):
     address=models.TextField(_('Useraddress'),max_length=300,blank=True, null=True)
     notification_status=models.BooleanField(_('Usernotification_status'),default=False)
     score=models.IntegerField(_('CustomUserscore'),default=0)
-    created_at=jmodel.jDateTimeField(_('Usercreate_at'),blank=True, null=True)
-    updated_at=jmodel.jDateTimeField(_('Userupdated_at'),blank=True, null=True)
+    created_at=jmodel.jDateField(_('Usercreate_at'),blank=True, null=True)
+    updated_at=jmodel.jDateField(_('Userupdated_at'),blank=True, null=True)
 
 
     def __str__(self):
-        return self.phone+str(score)
+        return self.phone+'___score_'+str(self.score)
     class Meta:
         verbose_name=_('CustomUser')
         verbose_name_plural=_('CustomUsers')

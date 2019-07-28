@@ -133,7 +133,7 @@ USE_TZ = True
 
 #dadane masire file po va mo
 LOCALE_PATHS = (
-    os.path.join('Cinemalogs', '../locale'),
+    os.path.join(BASE_DIR, 'locale'),
 )
 
 

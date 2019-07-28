@@ -11,7 +11,7 @@ class QuestionList(APIView):
         token=request.query_params.get('token')
         compId=request.query_params.get('compId')
         if not checkUserToken(userId,token):
-             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST) 
+             return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED) 
         if compId is not None:
             try:       
                 instance=Question.objects.filter(competition_id=compId)
@@ -20,12 +20,12 @@ class QuestionList(APIView):
             except Question.DoesNotExist:
                 pass
         return Response("Competition ID is invalid",status=status.HTTP_400_BAD_REQUEST)
-class QuestionDeatail(APIView):
+class QuestionDetail(APIView):
     def get(self,request,id,format=None):
         userId=request.query_params.get('userid')
         token=request.query_params.get('token')
         if not checkUserToken(userId,token):
-             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
+             return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)
         if id is not None:    
             try:
                 instance=Question.objects.get(pk=id)

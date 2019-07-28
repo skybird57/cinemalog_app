@@ -249,6 +249,10 @@ msgstr "نسخه اپلیکیشن"
 msgid "ApplicationVersions"
 msgstr "نسخه اپلیکیشن"
 
+#: .\cinemalog\models.py:136
+msgid "UserAnswers"
+msgstr "جواب کاربران"
+
 #: .\cinemalog\models.py:139
 msgid "newstitle"
 msgstr "عنوان خبر"

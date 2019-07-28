@@ -23,18 +23,20 @@ class SignUp(APIView):
             try:
                 token_instance=CustomUserToken.objects.get(user_id=id)  # find user token
             except CustomUserToken.DoesNotExist:
-                token_instance=createtoken(id)
+                token_instance=createtoken(id)   # create if not found
 
             serializer_tokeninstance=UserTokenSerializer(token_instance)  # serialize token
             if serializer_tokeninstance:
                 return Response(serializer_tokeninstance.data,status=status.HTTP_200_OK) #return token
             else:
-                return Response(serializer_tokeninstance.data,status=status.HTTP_400_BAD_REQUEST) #problem
+                return Response(serializer_tokeninstance.errors,status=status.HTTP_400_BAD_REQUEST) #problem
             
-# create new user    
+# create new user 
+from datetime import datetime   
 def createuser(phone):
         user=CustomUser()
         user.phone=phone
+        user.created_at=datetime.today()
         user.save()
         if createtoken(user.id):
             return user
