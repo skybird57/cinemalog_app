@@ -9,8 +9,8 @@ from users.Api.Rest.checkUserToken import checkUserToken
 
 class UpdateProfile(APIView):
     def get(self,request,format=None):
-        instance=CustomUser.objects.get(pk=request.query_params.get('userId'))
-        serializer_instance=UserSerializer(instance)
+        instance=CustomUser.objects.filter(pk=request.query_params.get('userId'))
+        serializer_instance=UserSerializer(instance[0])
         return Response(serializer_instance.data)
     def put(self,request,format=None):
         userId=request.query_params.get('userId')

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-07-06 15:12+0430\n"
+"POT-Creation-Date: 2019-07-29 09:25+0430\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,1400 +16,6 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-
-#: .\Web\urls.py:22
-msgid "Cinema-log Admin"
-msgstr "ادمین سینمالوگ"
-
-#: .\Web\urls.py:23
-msgid "Cinema-log Admin Portal"
-msgstr "پرتال مدیریت سینمالوگ"
-
-#: .\Web\urls.py:24
-msgid "Welcome to Cinema-log Researcher Portal"
-msgstr "به سینمالوگ خوش آمدید"
-
-#: .\cinemalog\admin.py:43
-msgid "adminCoverVideo"
-msgstr "بندانگشتی فیلم"
-
-#: .\cinemalog\models.py:16
-msgid "videoname"
-msgstr "نام فیلم"
-
-#: .\cinemalog\models.py:18
-msgid "videodesc"
-msgstr "یک دیالوگ از فیلم"
-
-#: .\cinemalog\models.py:19
-msgid "videocreatedate"
-msgstr "تاریخ ایجاد دیالوگ"
-
-#: .\cinemalog\models.py:20
-msgid "videopublished"
-msgstr "انتشار ویدیو"
-
-#: .\cinemalog\models.py:21
-msgid "videopublishdate"
-msgstr "تاریخ انتشار"
-
-#: .\cinemalog\models.py:23
-msgid "videofilename"
-msgstr "ویدیو فیلم"
-
-#: .\cinemalog\models.py:24
-msgid "videocver"
-msgstr "تصویر بندانگشتی"
-
-#: .\cinemalog\models.py:28
-msgid "videoview"
-msgstr "تعداد بازدید"
-
-#: .\cinemalog\models.py:29
-msgid "ٰVideouser_id"
-msgstr ""
-
-#: .\cinemalog\models.py:37
-msgid "Video"
-msgstr "دیالوگ"
-
-#: .\cinemalog\models.py:38
-msgid "Videos"
-msgstr "دیالوگ ها"
-
-#: .\cinemalog\models.py:41
-msgid "competitiontitle"
-msgstr "عنوان مسابقه"
-
-#: .\cinemalog\models.py:43
-msgid "competitioncreatedate"
-msgstr "تاریخ ایجاد مسابقه"
-
-#: .\cinemalog\models.py:48
-msgid "Competition"
-msgstr "مسابقه"
-
-#: .\cinemalog\models.py:49
-msgid "Competitions"
-msgstr "مسابقات"
-
-#: .\cinemalog\models.py:55
-msgid "questionuestion"
-msgstr "متن سوال"
-
-#: .\cinemalog\models.py:56
-msgid "questionanswer1"
-msgstr "جواب اول"
-
-#: .\cinemalog\models.py:57
-msgid "questionanswer2"
-msgstr "جواب دوم"
-
-#: .\cinemalog\models.py:58
-msgid "questionanswer3"
-msgstr "جواب سوم"
-
-#: .\cinemalog\models.py:59
-msgid "questionanswer4"
-msgstr "جواب چهارم"
-
-#: .\cinemalog\models.py:60
-msgid "questioncorrect"
-msgstr "جواب صحیح"
-
-#: .\cinemalog\models.py:61
-msgid "questionscore_ca"
-msgstr " امتیاز پاسخ صحیح"
-
-#: .\cinemalog\models.py:62
-msgid "questionscore_wa"
-msgstr " امتیاز پاسخ غلط"
-
-#: .\cinemalog\models.py:67
-msgid "Question"
-msgstr "سوال"
-
-#: .\cinemalog\models.py:68
-msgid "Questions"
-msgstr "سوالات"
-
-#: .\cinemalog\models.py:76
-msgid "gifttitle"
-msgstr "عنوان جایزه"
-
-#: .\cinemalog\models.py:77
-msgid "giftdesc"
-msgstr "متن توضیحات جایزه"
-
-#: .\cinemalog\models.py:78
-msgid "giftpic"
-msgstr "عکس جایزه"
-
-#: .\cinemalog\models.py:79
-msgid "giftdeliverdate"
-msgstr "تاریخ اهدای جایزه"
-
-#: .\cinemalog\models.py:83
-msgid "Gift"
-msgstr "جایزه"
-
-#: .\cinemalog\models.py:84
-msgid "Gifts"
-msgstr "جوایز"
-
-#: .\cinemalog\models.py:87
-msgid "tokenstrtoken"
-msgstr "رشته توکن"
-
-#: .\cinemalog\models.py:92
-msgid "Token"
-msgstr "توکن"
-
-#: .\cinemalog\models.py:93
-msgid "Tokens"
-msgstr "توکنها"
-
-#: .\cinemalog\models.py:96
-msgid "sendpushtitle"
-msgstr "عنوان"
-
-#: .\cinemalog\models.py:97
-msgid "sendpushcontent"
-msgstr "متن پوش"
-
-#: .\cinemalog\models.py:98
-msgid "sendpushandroid"
-msgstr "اندروید"
-
-#: .\cinemalog\models.py:99
-msgid "sendpushios"
-msgstr "آی او اس"
-
-#: .\cinemalog\models.py:104
-msgid "SendPush"
-msgstr "ارسال نوتیفیکیشن"
-
-#: .\cinemalog\models.py:105
-msgid "SendPushs"
-msgstr "ارسال نوتیفیکیشن"
-
-#: .\cinemalog\models.py:112
-msgid "sendadvtitle"
-msgstr "عنوان"
-
-#: .\cinemalog\models.py:113
-msgid "sendadvcontent"
-msgstr "متن پوش"
-
-#: .\cinemalog\models.py:114
-msgid "sendadvtype"
-msgstr "نوع تبلیغ"
-
-#: .\cinemalog\models.py:115
-msgid "sendadvlink"
-msgstr "لینک"
-
-#: .\cinemalog\models.py:116
-msgid "sendadvpic"
-msgstr "آپلود عکس"
-
-#: .\cinemalog\models.py:117
-msgid "sendadvandroid"
-msgstr "اندروید"
-
-#: .\cinemalog\models.py:118
-msgid "sendadvios"
-msgstr "آی او اس"
-
-#: .\cinemalog\models.py:123 .\cinemalog\models.py:124
-msgid "SendAdv"
-msgstr "ارسال تبلیغات"
-
-#: .\cinemalog\models.py:128
-msgid "applicationplatform"
-msgstr "نوع سیستم"
-
-#: .\cinemalog\models.py:129
-msgid "applicationrequire"
-msgstr "نسخه حداقل"
-
-#: .\cinemalog\models.py:130
-msgid "applicationlast"
-msgstr "آخرین نسخه"
-
-#: .\cinemalog\models.py:131
-msgid "applicationgeneratedate"
-msgstr "تاریخ به روز رسانی"
-
-#: .\cinemalog\models.py:135
-msgid "ApplicationVersion"
-msgstr "نسخه اپلیکیشن"
-
-#: .\cinemalog\models.py:136
-msgid "ApplicationVersions"
-msgstr "نسخه اپلیکیشن"
-
-#: .\cinemalog\models.py:136
-msgid "UserAnswers"
-msgstr "جواب کاربران"
-
-#: .\cinemalog\models.py:139
-msgid "newstitle"
-msgstr "عنوان خبر"
-
-#: .\cinemalog\models.py:140
-msgid "newsdesc"
-msgstr "مشروح خبر"
-
-#: .\cinemalog\models.py:141
-msgid "newsimage"
-msgstr "عکس مربوط به خبر"
-
-#: .\cinemalog\models.py:142
-msgid "newssource"
-msgstr "منبع"
-
-#: .\cinemalog\models.py:143
-msgid "newspublished"
-msgstr "تاریخ انتشار خبر"
-
-#: .\cinemalog\models.py:149 .\cinemalog\models.py:150
-msgid "News"
-msgstr "اخبار"
-
-#: .\enviroment\Lib\site-packages\django\contrib\messages\apps.py:7
-msgid "Messages"
-msgstr "پیغام"
-
-#: .\enviroment\Lib\site-packages\django\contrib\sitemaps\apps.py:7
-msgid "Site Maps"
-msgstr "نقشه سایت"
-
-#: .\enviroment\Lib\site-packages\django\contrib\staticfiles\apps.py:9
-msgid "Static Files"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\contrib\syndication\apps.py:7
-msgid "Syndication"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\paginator.py:45
-msgid "That page number is not an integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\paginator.py:47
-msgid "That page number is less than 1"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\paginator.py:52
-msgid "That page contains no results"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:31
-msgid "Enter a valid value."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:102
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:658
-msgid "Enter a valid URL."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:154
-msgid "Enter a valid integer."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:165
-msgid "Enter a valid email address."
-msgstr ""
-
-#. Translators: "letters" means latin letters: a-z and A-Z.
-#: .\enviroment\Lib\site-packages\django\core\validators.py:239
-msgid ""
-"Enter a valid 'slug' consisting of letters, numbers, underscores or hyphens."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:246
-msgid ""
-"Enter a valid 'slug' consisting of Unicode letters, numbers, underscores, or "
-"hyphens."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:255
-#: .\enviroment\Lib\site-packages\django\core\validators.py:275
-msgid "Enter a valid IPv4 address."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:260
-#: .\enviroment\Lib\site-packages\django\core\validators.py:276
-msgid "Enter a valid IPv6 address."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:270
-#: .\enviroment\Lib\site-packages\django\core\validators.py:274
-msgid "Enter a valid IPv4 or IPv6 address."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:304
-msgid "Enter only digits separated by commas."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:310
-#, python-format
-msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:342
-#, python-format
-msgid "Ensure this value is less than or equal to %(limit_value)s."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:351
-#, python-format
-msgid "Ensure this value is greater than or equal to %(limit_value)s."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:361
-#, python-format
-msgid ""
-"Ensure this value has at least %(limit_value)d character (it has %"
-"(show_value)d)."
-msgid_plural ""
-"Ensure this value has at least %(limit_value)d characters (it has %"
-"(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:376
-#, python-format
-msgid ""
-"Ensure this value has at most %(limit_value)d character (it has %(show_value)"
-"d)."
-msgid_plural ""
-"Ensure this value has at most %(limit_value)d characters (it has %"
-"(show_value)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:395
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:290
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:325
-msgid "Enter a number."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:397
-#, python-format
-msgid "Ensure that there are no more than %(max)s digit in total."
-msgid_plural "Ensure that there are no more than %(max)s digits in total."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:402
-#, python-format
-msgid "Ensure that there are no more than %(max)s decimal place."
-msgid_plural "Ensure that there are no more than %(max)s decimal places."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:407
-#, python-format
-msgid ""
-"Ensure that there are no more than %(max)s digit before the decimal point."
-msgid_plural ""
-"Ensure that there are no more than %(max)s digits before the decimal point."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:469
-#, python-format
-msgid ""
-"File extension '%(extension)s' is not allowed. Allowed extensions are: '%"
-"(allowed_extensions)s'."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\core\validators.py:521
-msgid "Null characters are not allowed."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\base.py:1162
-#: .\enviroment\Lib\site-packages\django\forms\models.py:756
-msgid "and"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\base.py:1164
-#, python-format
-msgid "%(model_name)s with this %(field_labels)s already exists."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:104
-#, python-format
-msgid "Value %(value)r is not a valid choice."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:105
-msgid "This field cannot be null."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:106
-msgid "This field cannot be blank."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:107
-#, python-format
-msgid "%(model_name)s with this %(field_label)s already exists."
-msgstr ""
-
-#. Translators: The 'lookup_type' is one of 'date', 'year' or 'month'.
-#. Eg: "Title must be unique for pub_date year"
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:111
-#, python-format
-msgid ""
-"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:128
-#, python-format
-msgid "Field of type: %(field_type)s"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:899
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1766
-msgid "Integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:903
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1764
-#, python-format
-msgid "'%(value)s' value must be an integer."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:978
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1844
-msgid "Big (8 byte) integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:990
-#, python-format
-msgid "'%(value)s' value must be either True or False."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:991
-#, python-format
-msgid "'%(value)s' value must be either True, False, or None."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:993
-msgid "Boolean (Either True or False)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1034
-#, python-format
-msgid "String (up to %(max_length)s)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1098
-msgid "Comma-separated integers"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1147
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid date format. It must be in YYYY-MM-DD "
-"format."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1149
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1292
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (YYYY-MM-DD) but it is an invalid "
-"date."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1152
-#: .\enviroment\Lib\site-packages\django_jalali\db\models.py:45
-msgid "Date (without time)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1290
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
-"uuuuuu]][TZ] format."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1294
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
-"[TZ]) but it is an invalid date/time."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1298
-#: .\enviroment\Lib\site-packages\django_jalali\db\models.py:189
-msgid "Date (with time)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1446
-#, python-format
-msgid "'%(value)s' value must be a decimal number."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1448
-msgid "Decimal number"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1587
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in [DD] [HH:[MM:]]ss[."
-"uuuuuu] format."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1590
-msgid "Duration"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1640
-msgid "Email address"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1663
-msgid "File path"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1729
-#, python-format
-msgid "'%(value)s' value must be a float."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1731
-msgid "Floating point number"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1860
-msgid "IPv4 address"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1891
-msgid "IP address"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1971
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1972
-#, python-format
-msgid "'%(value)s' value must be either None, True or False."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:1974
-msgid "Boolean (Either True, False or None)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2009
-msgid "Positive integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2022
-msgid "Positive small integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2036
-#, python-format
-msgid "Slug (up to %(max_length)s)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2068
-msgid "Small integer"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2075
-msgid "Text"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2103
-#, python-format
-msgid ""
-"'%(value)s' value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
-"format."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2105
-#, python-format
-msgid ""
-"'%(value)s' value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
-"invalid time."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2108
-msgid "Time"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2234
-msgid "URL"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2256
-msgid "Raw binary data"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2306
-#, python-format
-msgid "'%(value)s' is not a valid UUID."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\__init__.py:2308
-msgid "Universally unique identifier"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\files.py:221
-msgid "File"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\files.py:360
-msgid "Image"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:778
-#, python-format
-msgid "%(model)s instance with %(field)s %(value)r does not exist."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:780
-msgid "Foreign Key (type determined by related field)"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:1007
-msgid "One-to-one relationship"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:1057
-#, python-format
-msgid "%(from)s-%(to)s relationship"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:1058
-#, python-format
-msgid "%(from)s-%(to)s relationships"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\db\models\fields\related.py:1100
-msgid "Many-to-many relationship"
-msgstr ""
-
-#. Translators: If found as last label character, these punctuation
-#. characters will prevent the default label_suffix to be appended to the label
-#: .\enviroment\Lib\site-packages\django\forms\boundfield.py:146
-msgid ":?.!"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:53
-msgid "This field is required."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:245
-msgid "Enter a whole number."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:396
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:1126
-#: .\enviroment\Lib\site-packages\django_jalali\forms\__init__.py:14
-msgid "Enter a valid date."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:420
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:1127
-msgid "Enter a valid time."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:442
-#: .\enviroment\Lib\site-packages\django_jalali\forms\__init__.py:51
-msgid "Enter a valid date/time."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:471
-msgid "Enter a valid duration."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:472
-msgid "The number of days must be between {min_days} and {max_days}."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:532
-msgid "No file was submitted. Check the encoding type on the form."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:533
-msgid "No file was submitted."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:534
-msgid "The submitted file is empty."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:536
-#, python-format
-msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
-msgid_plural ""
-"Ensure this filename has at most %(max)d characters (it has %(length)d)."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:539
-msgid "Please either submit a file or check the clear checkbox, not both."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:600
-msgid ""
-"Upload a valid image. The file you uploaded was either not an image or a "
-"corrupted image."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:762
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:852
-#: .\enviroment\Lib\site-packages\django\forms\models.py:1270
-#, python-format
-msgid "Select a valid choice. %(value)s is not one of the available choices."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:853
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:968
-#: .\enviroment\Lib\site-packages\django\forms\models.py:1269
-msgid "Enter a list of values."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:969
-msgid "Enter a complete value."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\fields.py:1185
-msgid "Enter a valid UUID."
-msgstr ""
-
-#. Translators: This is the default suffix added to form field labels
-#: .\enviroment\Lib\site-packages\django\forms\forms.py:86
-msgid ":"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\forms.py:212
-#, python-format
-msgid "(Hidden field %(name)s) %(error)s"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:91
-msgid "ManagementForm data is missing or has been tampered with"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:338
-#, python-format
-msgid "Please submit %d or fewer forms."
-msgid_plural "Please submit %d or fewer forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:345
-#, python-format
-msgid "Please submit %d or more forms."
-msgid_plural "Please submit %d or more forms."
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:371
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:373
-msgid "Order"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\formsets.py:375
-msgid "Delete"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:751
-#, python-format
-msgid "Please correct the duplicate data for %(field)s."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:755
-#, python-format
-msgid "Please correct the duplicate data for %(field)s, which must be unique."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:761
-#, python-format
-msgid ""
-"Please correct the duplicate data for %(field_name)s which must be unique "
-"for the %(lookup)s in %(date_field)s."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:770
-msgid "Please correct the duplicate values below."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:1091
-msgid "The inline value did not match the parent instance."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:1158
-msgid "Select a valid choice. That choice is not one of the available choices."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\models.py:1272
-#, python-format
-msgid "\"%(pk)s\" is not a valid value."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\utils.py:162
-#, python-format
-msgid ""
-"%(datetime)s couldn't be interpreted in time zone %(current_timezone)s; it "
-"may be ambiguous or it may not exist."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:395
-msgid "Clear"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:396
-msgid "Currently"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:397
-msgid "Change"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:711
-msgid "Unknown"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:712
-msgid "Yes"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\forms\widgets.py:713
-msgid "No"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:788
-msgid "yes,no,maybe"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:817
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:834
-#, python-format
-msgid "%(size)d byte"
-msgid_plural "%(size)d bytes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:836
-#, python-format
-msgid "%s KB"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:838
-#, python-format
-msgid "%s MB"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:840
-#, python-format
-msgid "%s GB"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:842
-#, python-format
-msgid "%s TB"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\template\defaultfilters.py:844
-#, python-format
-msgid "%s PB"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:62
-msgid "p.m."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:63
-msgid "a.m."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:68
-msgid "PM"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:69
-msgid "AM"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:150
-msgid "midnight"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dateformat.py:152
-msgid "noon"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:6
-msgid "Monday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:6
-msgid "Tuesday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:6
-msgid "Wednesday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:6
-msgid "Thursday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:6
-msgid "Friday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:7
-msgid "Saturday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:7
-msgid "Sunday"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:10
-msgid "Mon"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:10
-msgid "Tue"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:10
-msgid "Wed"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:10
-msgid "Thu"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:10
-msgid "Fri"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:11
-msgid "Sat"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:11
-msgid "Sun"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "January"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "February"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "March"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "April"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "May"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:14
-msgid "June"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:15
-msgid "July"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:15
-msgid "August"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:15
-msgid "September"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:15
-msgid "October"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:15
-msgid "November"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:16
-msgid "December"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "jan"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "feb"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "mar"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "apr"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "may"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:19
-msgid "jun"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "jul"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "aug"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "sep"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "oct"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "nov"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:20
-msgid "dec"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:23
-msgctxt "abbrev. month"
-msgid "Jan."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:24
-msgctxt "abbrev. month"
-msgid "Feb."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:25
-msgctxt "abbrev. month"
-msgid "March"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:26
-msgctxt "abbrev. month"
-msgid "April"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:27
-msgctxt "abbrev. month"
-msgid "May"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:28
-msgctxt "abbrev. month"
-msgid "June"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:29
-msgctxt "abbrev. month"
-msgid "July"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:30
-msgctxt "abbrev. month"
-msgid "Aug."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:31
-msgctxt "abbrev. month"
-msgid "Sept."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:32
-msgctxt "abbrev. month"
-msgid "Oct."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:33
-msgctxt "abbrev. month"
-msgid "Nov."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:34
-msgctxt "abbrev. month"
-msgid "Dec."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:37
-msgctxt "alt. month"
-msgid "January"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:38
-msgctxt "alt. month"
-msgid "February"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:39
-msgctxt "alt. month"
-msgid "March"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:40
-msgctxt "alt. month"
-msgid "April"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:41
-msgctxt "alt. month"
-msgid "May"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:42
-msgctxt "alt. month"
-msgid "June"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:43
-msgctxt "alt. month"
-msgid "July"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:44
-msgctxt "alt. month"
-msgid "August"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:45
-msgctxt "alt. month"
-msgid "September"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:46
-msgctxt "alt. month"
-msgid "October"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:47
-msgctxt "alt. month"
-msgid "November"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\dates.py:48
-msgctxt "alt. month"
-msgid "December"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\ipv6.py:8
-msgid "This is not a valid IPv6 address."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\text.py:67
-#, python-format
-msgctxt "String to return when truncating text"
-msgid "%(truncated_text)s…"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\text.py:233
-msgid "or"
-msgstr ""
-
-#. Translators: This string is used as a separator between list elements
-#: .\enviroment\Lib\site-packages\django\utils\text.py:252
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:83
-msgid ", "
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:9
-#, python-format
-msgid "%d year"
-msgid_plural "%d years"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:10
-#, python-format
-msgid "%d month"
-msgid_plural "%d months"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:11
-#, python-format
-msgid "%d week"
-msgid_plural "%d weeks"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:12
-#, python-format
-msgid "%d day"
-msgid_plural "%d days"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:13
-#, python-format
-msgid "%d hour"
-msgid_plural "%d hours"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:14
-#, python-format
-msgid "%d minute"
-msgid_plural "%d minutes"
-msgstr[0] ""
-msgstr[1] ""
-
-#: .\enviroment\Lib\site-packages\django\utils\timesince.py:72
-msgid "0 minutes"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\utils\translation\__init__.py:274
-msgid "name"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:110
-msgid "Forbidden"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:111
-msgid "CSRF verification failed. Request aborted."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:115
-msgid ""
-"You are seeing this message because this HTTPS site requires a 'Referer "
-"header' to be sent by your Web browser, but none was sent. This header is "
-"required for security reasons, to ensure that your browser is not being "
-"hijacked by third parties."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:120
-msgid ""
-"If you have configured your browser to disable 'Referer' headers, please re-"
-"enable them, at least for this site, or for HTTPS connections, or for 'same-"
-"origin' requests."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:124
-msgid ""
-"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
-"including the 'Referrer-Policy: no-referrer' header, please remove them. The "
-"CSRF protection requires the 'Referer' header to do strict referer checking. "
-"If you're concerned about privacy, use alternatives like <a rel=\"noreferrer"
-"\" ...> for links to third-party sites."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:132
-msgid ""
-"You are seeing this message because this site requires a CSRF cookie when "
-"submitting forms. This cookie is required for security reasons, to ensure "
-"that your browser is not being hijacked by third parties."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:137
-msgid ""
-"If you have configured your browser to disable cookies, please re-enable "
-"them, at least for this site, or for 'same-origin' requests."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\csrf.py:142
-msgid "More information is available with DEBUG=True."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:41
-msgid "No year specified"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:61
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:111
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:208
-msgid "Date out of range"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:90
-msgid "No month specified"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:142
-msgid "No day specified"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:188
-msgid "No week specified"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:338
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:367
-#, python-format
-msgid "No %(verbose_name_plural)s available"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:589
-#, python-format
-msgid ""
-"Future %(verbose_name_plural)s not available because %(class_name)s."
-"allow_future is False."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\dates.py:623
-#, python-format
-msgid "Invalid date string '%(datestr)s' given format '%(format)s'"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\detail.py:54
-#, python-format
-msgid "No %(verbose_name)s found matching the query"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\list.py:67
-msgid "Page is not 'last', nor can it be converted to an int."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\list.py:72
-#, python-format
-msgid "Invalid page (%(page_number)s): %(message)s"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\generic\list.py:154
-#, python-format
-msgid "Empty list and '%(class_name)s.allow_empty' is False."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\static.py:40
-msgid "Directory indexes are not allowed here."
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\static.py:42
-#, python-format
-msgid "\"%(path)s\" does not exist"
-msgstr ""
-
-#: .\enviroment\Lib\site-packages\django\views\static.py:80
-#, python-format
-msgid "Index of %(directory)s"
-msgstr ""
 
 #: .\enviroment\Lib\site-packages\django\views\templates\default_urlconf.html:6
 msgid "Django: the Web framework for perfectionists with deadlines."
@@ -1459,51 +65,203 @@ msgstr ""
 msgid "Connect, get help, or contribute"
 msgstr ""
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filters.py:39
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filterspecs.py:37
-msgid "Any date"
-msgstr ""
+#~ msgid "Cinema-log Admin"
+#~ msgstr "ادمین سینمالوگ"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filters.py:40
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filterspecs.py:38
-msgid "Today"
-msgstr ""
+#~ msgid "Cinema-log Admin Portal"
+#~ msgstr "پرتال مدیریت سینمالوگ"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filters.py:44
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filterspecs.py:39
-msgid "Past 7 days"
-msgstr ""
+#~ msgid "Welcome to Cinema-log Researcher Portal"
+#~ msgstr "به سینمالوگ خوش آمدید"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filters.py:48
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filterspecs.py:42
-msgid "This month"
-msgstr ""
+#~ msgid "adminCoverVideo"
+#~ msgstr "بندانگشتی فیلم"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filters.py:52
-#: .\enviroment\Lib\site-packages\django_jalali\admin\filterspecs.py:45
-msgid "This year"
-msgstr ""
+#~ msgid "videoname"
+#~ msgstr "نام فیلم"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\widgets.py:50
-msgid "Date:"
-msgstr ""
+#~ msgid "videodesc"
+#~ msgstr "یک دیالوگ از فیلم"
 
-#: .\enviroment\Lib\site-packages\django_jalali\admin\widgets.py:50
-msgid "Time:"
-msgstr ""
+#~ msgid "videocreatedate"
+#~ msgstr "تاریخ ایجاد دیالوگ"
 
-#: .\enviroment\Lib\site-packages\django_jalali\db\models.py:48
-msgid "Enter a valid date in YYYY-MM-DD format."
-msgstr ""
+#~ msgid "videopublished"
+#~ msgstr "انتشار ویدیو"
 
-#: .\enviroment\Lib\site-packages\django_jalali\db\models.py:49
-#, python-format
-msgid "Invalid date: %s"
-msgstr ""
+#~ msgid "videopublishdate"
+#~ msgstr "تاریخ انتشار"
 
-#: .\enviroment\Lib\site-packages\django_jalali\db\models.py:186
-msgid "Enter a valid date/time in YYYY-MM-DD HH:MM[:ss[.uuuuuu]] format."
-msgstr ""
+#~ msgid "videofilename"
+#~ msgstr "ویدیو فیلم"
+
+#~ msgid "videocver"
+#~ msgstr "تصویر بندانگشتی"
+
+#~ msgid "videoview"
+#~ msgstr "تعداد بازدید"
+
+#~ msgid "Video"
+#~ msgstr "دیالوگ"
+
+#~ msgid "Videos"
+#~ msgstr "دیالوگ ها"
+
+#~ msgid "competitiontitle"
+#~ msgstr "عنوان مسابقه"
+
+#~ msgid "competitioncreatedate"
+#~ msgstr "تاریخ ایجاد مسابقه"
+
+#~ msgid "Competition"
+#~ msgstr "مسابقه"
+
+#~ msgid "Competitions"
+#~ msgstr "مسابقات"
+
+#~ msgid "questionuestion"
+#~ msgstr "متن سوال"
+
+#~ msgid "questionanswer1"
+#~ msgstr "جواب اول"
+
+#~ msgid "questionanswer2"
+#~ msgstr "جواب دوم"
+
+#~ msgid "questionanswer3"
+#~ msgstr "جواب سوم"
+
+#~ msgid "questionanswer4"
+#~ msgstr "جواب چهارم"
+
+#~ msgid "questioncorrect"
+#~ msgstr "جواب صحیح"
+
+#~ msgid "questionscore_ca"
+#~ msgstr " امتیاز پاسخ صحیح"
+
+#~ msgid "questionscore_wa"
+#~ msgstr " امتیاز پاسخ غلط"
+
+#~ msgid "Question"
+#~ msgstr "سوال"
+
+#~ msgid "Questions"
+#~ msgstr "سوالات"
+
+#~ msgid "gifttitle"
+#~ msgstr "عنوان جایزه"
+
+#~ msgid "giftdesc"
+#~ msgstr "متن توضیحات جایزه"
+
+#~ msgid "giftpic"
+#~ msgstr "عکس جایزه"
+
+#~ msgid "giftdeliverdate"
+#~ msgstr "تاریخ اهدای جایزه"
+
+#~ msgid "Gift"
+#~ msgstr "جایزه"
+
+#~ msgid "Gifts"
+#~ msgstr "جوایز"
+
+#~ msgid "tokenstrtoken"
+#~ msgstr "رشته توکن"
+
+#~ msgid "Token"
+#~ msgstr "توکن"
+
+#~ msgid "Tokens"
+#~ msgstr "توکنها"
+
+#~ msgid "sendpushtitle"
+#~ msgstr "عنوان"
+
+#~ msgid "sendpushcontent"
+#~ msgstr "متن پوش"
+
+#~ msgid "sendpushandroid"
+#~ msgstr "اندروید"
+
+#~ msgid "sendpushios"
+#~ msgstr "آی او اس"
+
+#~ msgid "SendPush"
+#~ msgstr "ارسال نوتیفیکیشن"
+
+#~ msgid "SendPushs"
+#~ msgstr "ارسال نوتیفیکیشن"
+
+#~ msgid "sendadvtitle"
+#~ msgstr "عنوان"
+
+#~ msgid "sendadvcontent"
+#~ msgstr "متن پوش"
+
+#~ msgid "sendadvtype"
+#~ msgstr "نوع تبلیغ"
+
+#~ msgid "sendadvlink"
+#~ msgstr "لینک"
+
+#~ msgid "sendadvpic"
+#~ msgstr "آپلود عکس"
+
+#~ msgid "sendadvandroid"
+#~ msgstr "اندروید"
+
+#~ msgid "sendadvios"
+#~ msgstr "آی او اس"
+
+#~ msgid "SendAdv"
+#~ msgstr "ارسال تبلیغات"
+
+#~ msgid "applicationplatform"
+#~ msgstr "نوع سیستم"
+
+#~ msgid "applicationrequire"
+#~ msgstr "نسخه حداقل"
+
+#~ msgid "applicationlast"
+#~ msgstr "آخرین نسخه"
+
+#~ msgid "applicationgeneratedate"
+#~ msgstr "تاریخ به روز رسانی"
+
+#~ msgid "ApplicationVersion"
+#~ msgstr "نسخه اپلیکیشن"
+
+#~ msgid "ApplicationVersions"
+#~ msgstr "نسخه اپلیکیشن"
+
+#~ msgid "UserAnswers"
+#~ msgstr "جواب کاربران"
+
+#~ msgid "newstitle"
+#~ msgstr "عنوان خبر"
+
+#~ msgid "newsdesc"
+#~ msgstr "مشروح خبر"
+
+#~ msgid "newsimage"
+#~ msgstr "عکس مربوط به خبر"
+
+#~ msgid "newssource"
+#~ msgstr "منبع"
+
+#~ msgid "newspublished"
+#~ msgstr "تاریخ انتشار خبر"
+
+#~ msgid "News"
+#~ msgstr "اخبار"
+
+#~ msgid "Messages"
+#~ msgstr "پیغام"
+
+#~ msgid "Site Maps"
+#~ msgstr "نقشه سایت"
 
 #~ msgid "list_questions"
 #~ msgstr "لیست سوالات"

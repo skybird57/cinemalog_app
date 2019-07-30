@@ -113,6 +113,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
+
+
 LANGUAGES = (
     ('en-us', 'English'),
     ('fa', 'Farsi'),
@@ -131,10 +133,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-#dadane masire file po va mo
-LOCALE_PATHS = (
-    os.path.join(BASE_DIR, 'locale'),
-)
 
 
 # Static files (CSS, JavaScript, Images)
@@ -172,3 +170,8 @@ AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.AllowAllUsersModelBackend',
     #or 'django.contrib.auth.backends.ModelBackend',
 ]
+
+#dadane masire file po va mo
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)

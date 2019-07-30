@@ -10,7 +10,7 @@ class SignUp(APIView):
         phone=request.query_params.get('phone') # get phone from request
         if not phone:
             return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
-        p=re.search('^09[0-3]{1}[0-9]{8}$',phone)  # phone format
+        p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
         if not p:
             return Response("Phone format is wrong",status=status.HTTP_404_NOT_FOUND)
         try:
