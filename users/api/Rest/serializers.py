@@ -3,7 +3,9 @@ from users.models import CustomUser,CustomUserToken
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=CustomUser
-        fields=('id','username','phone',)
+        fields=('id','username','phone','image')
+
+
 
 class UserTokenSerializer(serializers.ModelSerializer):
     user=serializers.CharField(read_only=True,source='user.phone')
