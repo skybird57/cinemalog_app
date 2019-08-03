@@ -48,3 +48,11 @@ def crawler():
                         html+=container.title.string+' added now'+'\n'
                         
     return html    
+
+import time
+
+def test():
+    while True:
+        crawler()
+        print("salam")
+        time.sleep(60*60)

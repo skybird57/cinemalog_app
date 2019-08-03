@@ -5,7 +5,7 @@ from django_jalali.admin import jDateTimeField,JDateFieldListFilter
 # Register your models here.
 
 class UserAdmin(admin.ModelAdmin):
-    list_display=('phone','score','loadUserPic')
+    list_display=('phone','score','verifyCode','loadUserPic')
     list_filter=(('created_at',JDateFieldListFilter),)
     search_fields=('phone',)
     def loadUserPic(self,obj):
@@ -16,7 +16,7 @@ class UserAdmin(admin.ModelAdmin):
         return mark_safe('<img src="{}" width=60px height=60px/>'.format(location))
     loadUserPic.allow_tag=True
 class UserTokenAdmin(admin.ModelAdmin):
-    list_display=('token','user',)
+    list_display=('token','user','deviceId','validToken')
  
 
 #register

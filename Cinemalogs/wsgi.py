@@ -14,3 +14,9 @@ from django.core.wsgi import get_wsgi_application
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'Cinemalogs.settings')
 
 application = get_wsgi_application()
+
+#import time
+#from threading import Thread
+#from cinemalog.Modules import news_crawler
+#th=Thread(target=news_crawler.test)
+#th.start()
