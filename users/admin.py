@@ -16,7 +16,7 @@ class UserAdmin(admin.ModelAdmin):
         return mark_safe('<img src="{}" width=60px height=60px/>'.format(location))
     loadUserPic.allow_tag=True
 class UserTokenAdmin(admin.ModelAdmin):
-    list_display=('token','user','deviceId','validToken')
+    list_display=('token','user','deviceType','validToken')
  
 
 #register

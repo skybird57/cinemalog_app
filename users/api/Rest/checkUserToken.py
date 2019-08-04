@@ -8,10 +8,10 @@ def checkUserToken(userid,token):
     except CustomUser.DoesNotExist:
         return False
     try:
-        token_instance=CustomUserToken.objects.get(user_id=user_instance.id)
+        token_instance=CustomUserToken.objects.get(user_id=user_instance.id,token=token)
         if token==token_instance.token:
             return True
         else:
             return False
-    except CustomUserToken.DoeaNotExist:
+    except CustomUserToken.DoesNotExist:
         return False

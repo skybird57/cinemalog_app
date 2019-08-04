@@ -13,7 +13,7 @@ class CustomUser(models.Model):
     score=models.IntegerField(_('CustomUserscore'),default=0)
     created_at=jmodel.jDateField(_('Usercreate_at'),blank=True, null=True)
     updated_at=jmodel.jDateField(_('Userupdated_at'),blank=True, null=True)
-    verifyCode=models.IntegerField(_('UserVerifyCode'),blank=True, null=True)
+    verifyCode=models.IntegerField(_('UserVerifyCode'),default=0)
 
 
     def __str__(self):
@@ -23,11 +23,12 @@ class CustomUser(models.Model):
         verbose_name_plural=_('CustomUsers')
 
 class CustomUserToken(models.Model):
-    DEVICE_ID=((0,'Ios'),(1,'Android'))
-    token=models.TextField(_('Tokentoken'),max_length=500,unique=True)
+    DEVICE_TYPE=((0,'Ios'),(1,'Android'))
+    token=models.TextField(_('Tokentoken'),max_length=500,unique=True)   
     user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('Tokenuser_id'))
-    deviceId=models.IntegerField(_('TokenDeviceId'),choices=DEVICE_ID)
-    validToken=models.TextField(_('TokenValidToken'),max_length=500)
+    deviceType=models.IntegerField(_('TokenDeviceType'),choices=DEVICE_TYPE)  # tpe device
+    deviceId=models.CharField(_('TokenDeviceId'),max_length=200)  # serial id device
+    validToken=models.TextField(_('TokenValidToken'),max_length=500) #comes from google
 
 
     def __str__(self):

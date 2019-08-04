@@ -8,6 +8,9 @@ class SignUp(APIView):
     # get method
     def get(self,request,format=None):
         phone=request.query_params.get('phone') # get phone from request
+        deviceType=request.query_params.get('deviceType')  # get device type from request
+        deviceId=request.query_params.get('deviceId')  # get device id from request
+        validToken=request.query_params.get('validToken') # get valid token from rquest
         if not phone:
             return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
@@ -19,7 +22,7 @@ class SignUp(APIView):
             if serializer_userinstance:
                 id=serializer_userinstance.data['id'] # get user id
                 try:
-                    token_instance=CustomUserToken.objects.get(user_id=id)  # find user token
+                    token_instance=CustomUserToken.objects.get(user_id=id,deviceId=deviceId)  # find user token
                     serializer_tokeninstance=UserTokenSerializer(token_instance)  # serialize token
                     if serializer_tokeninstance:
                         return Response(serializer_tokeninstance.data,status=status.HTTP_200_OK) #return token return Response()
@@ -30,6 +33,7 @@ class SignUp(APIView):
 
     def post(self,request,format=None):
         phone=request.query_params.get('phone') # get phone from request
+        deviceType=request.query_params.get('deviceType')  # get device type from request
         deviceId=request.query_params.get('deviceId')  # get device id from request
         validToken=request.query_params.get('validToken') # get valid token from rquest
         if not phone:
@@ -37,19 +41,27 @@ class SignUp(APIView):
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
         if not p:
             return Response("Phone format is wrong",status=status.HTTP_404_NOT_FOUND)
-        d=re.search('^(0|1)$',deviceId)
+        d=re.search('^(0|1)$',deviceType)
         if not d:
-            return Response("device id format is wrong",status=status.HTTP_404_NOT_FOUND)
+            return Response("device type format is wrong",status=status.HTTP_404_NOT_FOUND)
         try:
             user_instance=CustomUser.objects.get(phone=phone) # get user
             serializer_userinstance=UserSerializer(user_instance)  # serialize user
             if serializer_userinstance:
                 id=serializer_userinstance.data['id'] # get user id
             try:
-                token_instance=CustomUserToken.objects.filter(user_id=id,deviceId=deviceId)  # find user token
-                #update token
+                if not (id and deviceId and deviceType and validToken):
+                    raise  Exception("inputs are not compeleted")
+                token_instance=CustomUserToken.objects.get(user_id=id,deviceId=deviceId)  # find user token
+                token_instance=updateToken(token_instance,deviceId,deviceType,validToken) #update token
+                serializer_tokeninstance=UserTokenSerializer(token_instance)  # serialize token
+                if serializer_tokeninstance:
+                    return Response(serializer_tokeninstance.data,status=status.HTTP_200_OK) #return token
+                else:
+                    return Response(serializer_tokeninstance.errors,status=status.HTTP_400_BAD_REQUEST) #problem
             except CustomUserToken.DoesNotExist:
-                token_instance=createtoken(id,deviceId,validToken)   # create if not found
+            
+                token_instance=createToken(id,deviceType,deviceId,validToken)   # create if not found
                 serializer_tokeninstance=UserTokenSerializer(token_instance)  # serialize token
                 if serializer_tokeninstance:
                     return Response(serializer_tokeninstance.data,status=status.HTTP_200_OK) #return token
@@ -61,15 +73,22 @@ class SignUp(APIView):
 
 # create new token
 import uuid
-def createtoken(id,deviceId,validToken):
+def createToken(id,deviceType,deviceId,validToken):
     try:
         token=CustomUserToken()
         token.token=uuid.uuid4().hex
         token.user_id=id
+        token.deviceType=deviceType
         token.deviceId=deviceId
         token.validToken=validToken
         token.save()
         return token 
     except Exception:
         return None
-       
+def updateToken(token,deviceId,deviceType,validToken):
+    token.DEVICE_TYPE=deviceType
+    token.deviceId=deviceId
+    token.validToken=validToken
+    token.token=uuid.uuid4().hex
+    token.save()
+    return token

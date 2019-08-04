@@ -13,9 +13,13 @@ import random
 
 class UpdateProfile(APIView):  # get record
     def get(self,request,format=None):
-        instance=CustomUser.objects.filter(pk=request.query_params.get('userId'))
-        serializer_instance=UserSerializer(instance[0])
-        return Response(serializer_instance.data)
+        try:
+            instance=CustomUser.objects.get(pk=request.query_params.get('userId')) # get user
+            serializer_instance=UserSerializer(instance)
+            return Response(serializer_instance.data,status=status.HTTP_200_OK) #show user
+        except CustomUser.DoesNotExist: 
+            return Response("user id is not valid",status=status.HTTP_400_BAD_REQUEST) # show error
+    
     def put(self,request,format=None):  # update function
         userId=request.query_params.get('userId')   # get parameters
         token=request.query_params.get('token')
@@ -42,6 +46,7 @@ def uploadUserImage1(serializer_inctance,avatar):
     fs=FileSystemStorage(location=settings.MEDIA_ROOT+'/avatar/') # define location
     serializer_inctance.image=fs.save(avatar.name,avatar) # save in image record
     serializer_inctance.save() # save serializer
+
 # use open file
 from django.core.files import File
 def uploadUserImage2(serializer_inctance,avatar):
