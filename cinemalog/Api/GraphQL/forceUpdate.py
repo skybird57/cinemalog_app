@@ -29,11 +29,11 @@ class Query(graphene.ObjectType):
                 update.status=1
                 update.message="force to update"
                 update.link="http:\\linkupdate"
-            elif version== update.required_version: 
+            elif version>= update.required_version and version<update.last_version: 
                 update.status=2
                 update.message="It's better to update"
                 update.link="http:\\linkupdate"
-            elif version==update.last_version:
+            elif version>=update.last_version:
                 update.status=3
                 update.message="It's ok"
                 update.link=""

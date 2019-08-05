@@ -1,0 +1,1140 @@
+{
+	"info": {
+		"_postman_id": "b1741b51-17c9-436f-a781-31e4d5095a1b",
+		"name": "cinemalog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Questions",
+			"item": [
+				{
+					"name": "add questions",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token sdfrgegrw4tg354546h46h",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"question\": \"کارگردان فیلم کیست؟\",\r\n    \"answer1\": \"هاشمی\",\r\n    \"answer2\": \"آبیار\",\r\n    \"answer3\": \"جعفری\",\r\n    \"answer4\": \"کیارستمی\",\r\n    \"correct_answer\": \"جعفری\",\r\n    \"score_ca\": 4,\r\n    \"score_wa\": -4,\r\n    \"Competition\": 1\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "question list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/questions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"questions"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Videos",
+			"item": [
+				{
+					"name": "video list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/videos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "video detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/videos/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"videos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add video",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/E:/Amir.txt"
+								},
+								{
+									"key": "film_name",
+									"value": "سالوادور",
+									"contentType": "",
+									"type": "text"
+								},
+								{
+									"key": "desc",
+									"value": "کمدی",
+									"type": "text"
+								},
+								{
+									"key": "cover_video",
+									"contentType": "multipart/form-data",
+									"type": "file",
+									"src": "/E:/Amir.txt"
+								},
+								{
+									"key": "create_at",
+									"value": "2019-06-03",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/videos",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"videos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update video",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "file_name",
+									"type": "file",
+									"src": "/E:/serialize.txt"
+								},
+								{
+									"key": "film_name",
+									"value": "hayollaaaaa",
+									"type": "text"
+								},
+								{
+									"key": "cover_video",
+									"type": "file",
+									"src": "/E:/serialize.txt"
+								},
+								{
+									"key": "desc",
+									"value": "comedy drum",
+									"type": "text"
+								},
+								{
+									"key": "create_at",
+									"value": "2019-05-21",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/videos/2/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"videos",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete video",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/cinemalog/videos/11/",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"cinemalog",
+								"videos",
+								"11",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Admin APIs",
+			"item": []
+		},
+		{
+			"name": "APIs",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "Rest",
+							"item": [
+								{
+									"name": "R logout",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/user/api/logout?userid=1&token=9ac832284c70478fb4cb0b83e4c341d2",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"logout"
+											],
+											"query": [
+												{
+													"key": "userid",
+													"value": "1"
+												},
+												{
+													"key": "token",
+													"value": "9ac832284c70478fb4cb0b83e4c341d2"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R signup",
+									"request": {
+										"auth": {
+											"type": "basic",
+											"basic": [
+												{
+													"key": "password",
+													"value": "admin",
+													"type": "string"
+												},
+												{
+													"key": "username",
+													"value": "admin",
+													"type": "string"
+												}
+											]
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/user/api/signup?phone=09360001315&deviceId=53y4646g3g3tg35fwf&validToken=4534f3g5hy755h65h&deviceType=0",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"signup"
+											],
+											"query": [
+												{
+													"key": "phone",
+													"value": "09360001315"
+												},
+												{
+													"key": "deviceId",
+													"value": "53y4646g3g3tg35fwf"
+												},
+												{
+													"key": "validToken",
+													"value": "4534f3g5hy755h65h"
+												},
+												{
+													"key": "deviceType",
+													"value": "0"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R get phone",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/user/api/getphone?phone=09360001315",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"getphone"
+											],
+											"query": [
+												{
+													"key": "phone",
+													"value": "09360001315"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R update profile",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "username",
+													"value": "hosein",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "09360001315",
+													"type": "text"
+												},
+												{
+													"key": "image",
+													"type": "file",
+													"src": [],
+													"disabled": true
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/user/api/updateprofile?userId=1&token=65858aad5dca4d69ac94ab819b747ab1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"updateprofile"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1"
+												},
+												{
+													"key": "token",
+													"value": "65858aad5dca4d69ac94ab819b747ab1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R set notification status",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/x-www-form-urlencoded",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "notification_status",
+													"value": "true",
+													"type": "text"
+												},
+												{
+													"key": "phone",
+													"value": "09360001315",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/user/api/setNotificationStatus?userId=1&token=65858aad5dca4d69ac94ab819b747ab1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"setNotificationStatus"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "1"
+												},
+												{
+													"key": "token",
+													"value": "65858aad5dca4d69ac94ab819b747ab1"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "GraphQL",
+							"item": [
+								{
+									"name": "G update profile",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/graphql",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "photo",
+													"type": "file",
+													"src": "/C:/Users/skybi/Desktop/Soghat2.png"
+												},
+												{
+													"key": "query",
+													"value": "mutation{\n  updateProfile(userId: 5, token: \"da81ddf0527446a8b914eab8dfc0f7b1\", input: {username: \"Emad Shiri\"}) {\n    user {\n      id\n      username\n      phone\n    }\n  }\n}",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G get phone",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation getphone{\r\n  getPhone(phone:\"09360001317\"){\r\n    user{\r\n      id\r\n      phone\r\n      username\r\n      verifyCode\r\n      score\r\n      image\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G signup",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation signup{\r\n  signup(input:{phone:\"09360001315\",deviceId:\"53y4646g3g3tg35fwf\",deviceType:1,validToken:\"4534f3g5hy755h65h\"}){\r\n    userSignUp{\r\n      user {\r\n        phone\r\n      }\r\n      validToken\r\n      deviceId\r\n      deviceType\r\n      token\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G logout",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query logout{\r\n  logout(userId:1,token:\"9173273313814a1c84be28600b2d6017\"){\r\n    id\r\n    user {\r\n      id\r\n    }\r\n    token\r\n    validToken\r\n    deviceId\r\n    deviceType\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G set notification status",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation setNotifyStatus{\r\n  Setnotificationstatus(input:{status:true},userId:1,token:\"65858aad5dca4d69ac94ab819b747ab1\"){\r\n    user{\r\n      id\r\n      username\r\n      phone\r\n      notificationStatus\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				},
+				{
+					"name": "cinema",
+					"item": [
+						{
+							"name": "Rest",
+							"item": [
+								{
+									"name": "R force update",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "noauth"
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"type": "text",
+												"value": "application/json"
+											},
+											{
+												"key": "Authorization",
+												"type": "text",
+												"value": "token 1be6bbcd5e47b25af907a358695233dda1982a62",
+												"warning": "This is a duplicate header and will be overridden by the Authorization header generated by Postman.",
+												"disabled": true
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\"platform\": \"Android\", \"require_version\": 11.3, \"last_version\": 11.3, \"generated_at\": \"1398-04-03\", \"user\": 1}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/forceupdate?version=3.6&platform=1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"forceupdate"
+											],
+											"query": [
+												{
+													"key": "version",
+													"value": "3.6"
+												},
+												{
+													"key": "platform",
+													"value": "1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R Dialogs",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/dialog/15?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"dialog",
+												"15"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "5"
+												},
+												{
+													"key": "token",
+													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R competitions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/competition?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"competition"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "5"
+												},
+												{
+													"key": "token",
+													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R questions",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/question?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1&compId=7",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"question"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "5"
+												},
+												{
+													"key": "token",
+													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
+												},
+												{
+													"key": "compId",
+													"value": "7"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R news",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/news/22?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"news",
+												"22"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "5"
+												},
+												{
+													"key": "token",
+													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R answer",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"cycle_question_id\": \"8\",\r\n            \"data\": [\r\n                {\r\n                    \"question\": 3,\r\n                    \"answer\": 2\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"cycle_question_id\": \"7\",\r\n            \"data\": [\r\n                {\r\n                    \"question\": 4,\r\n                    \"answer\": 1\r\n                },\r\n                {\r\n                    \"question\": 5,\r\n                    \"answer\": 1\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/answer?userId=3&token=bd3b25156ed341d88844c87a52f6b912",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"answer"
+											],
+											"query": [
+												{
+													"key": "userId",
+													"value": "3"
+												},
+												{
+													"key": "token",
+													"value": "bd3b25156ed341d88844c87a52f6b912"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						},
+						{
+							"name": "GraphQL",
+							"item": [
+								{
+									"name": "G force update",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query forceupdate{\r\n  appDetail(version: 3.7,platform:\"1\") {\r\n    requiredVersion\r\n    lastVersion\r\n    message\r\n    status\r\n    link\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G dialogs",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query videos{\r\n  videos(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\"){\r\n    id\r\n    filmName\r\n    fileName\r\n    \r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G competitions",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query competitions{\r\n  competitions(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\"){\r\n    title\r\n    questionSet{\r\n      id,question\r\n    }\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G questions",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query questions{\r\n  questions(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\"){\r\n    id\r\n    question\r\n    scoreWa\r\n    scoreCa\r\n    correctAnswer\r\n  }\r\n}",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G news",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"method": "GET",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "query news{\r\n  news(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\"){\r\n    id\r\n    title\r\n    desc\r\n    image\r\n    view\r\n  }\r\n}\r\n",
+												"variables": ""
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "G answer",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "graphql",
+											"graphql": {
+												"query": "mutation Answer($answer:JSONString){\r\n  registerAnswer(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\",answer:$answer)\r\n  {\r\n    userAnswer{\r\n      question {\r\n        id\r\n      }\r\n      competition {\r\n        id\r\n      }\r\n      user {\r\n        id\r\n        score\r\n      }\r\n      answer\r\n      message\r\n    }\r\n  }\r\n}",
+												"variables": "{\n\t\"answer\":\"{\\\"answers\\\": [{\\\"cycle_question_id\\\": \\\"8\\\",\\\"data\\\": [{\\\"question\\\": 3,\\\"answer\\\": 2}]}]}\"\n}"
+											}
+										},
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/graphql/",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"graphql",
+												""
+											]
+										}
+									},
+									"response": []
+								}
+							],
+							"_postman_isSubFolder": true
+						}
+					],
+					"_postman_isSubFolder": true
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "06458e95df0b7b146a0633543e3b6cba10772a39",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "2826eb78-987f-4dea-a35a-a821dc164bcf",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "e769e2d3-7999-4a76-8d86-f59d216a3f03",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

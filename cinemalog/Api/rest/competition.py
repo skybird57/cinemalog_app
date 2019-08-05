@@ -9,7 +9,7 @@ from users.Api.Rest.checkUserToken import checkUserToken
 
 class CompetitionList(APIView):
     def get(self, request,format=None):   #get all records
-        userid=request.query_params.get('userid') #get user id
+        userid=request.query_params.get('userId') #get user id
         token=request.query_params.get('token') #get token
         if not checkUserToken(userid,token): # check token
              return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)        
@@ -19,7 +19,7 @@ class CompetitionList(APIView):
         
 class CompetitionDetail(APIView):
     def get(self,request,id,format=None):    # get one record
-        userid=request.query_params.get('userid')  #get user id
+        userid=request.query_params.get('userId')  #get user id
         token=request.query_params.get('token')  # get token
         if not checkUserToken(userid,token):  # check token
              return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)

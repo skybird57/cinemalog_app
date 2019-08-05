@@ -45,7 +45,7 @@ class RegisterAnswer(graphene.Mutation):
                         userScore=calculateScore(userId,questionId,answerId) # calculate user score
                         userAnswer_instance.message=str(userScore)
                         print('userScore  ',userScore)
-                        #return RegisterAnswer(userAnswer=userAnswer_instance)
+                        return RegisterAnswer(userAnswer=userAnswer_instance)
                     except Exception:
                         raise Exception("couldnt import,wrong information")
  
@@ -57,7 +57,7 @@ class Mutation(graphene.ObjectType):
 def calculateScore(userId,questionId,answerId):  # calculate user score
         question=Question.objects.get(pk=questionId) # get question scores
         user=CustomUser.objects.get(pk=userId) # get userscore
-        if answerId==question.correct_answer:  # check answer
+        if str(answerId)==question.correct_answer:  # check answer
             user.score+=question.score_ca  # add score
             print(user.score)
         else: 

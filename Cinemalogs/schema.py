@@ -22,9 +22,11 @@ from users.Api.GraphQl.logout import Query as logout
 #import Api Mutations
 from users.Api.GraphQl.getphone import Mutation as getphone
 from users.Api.GraphQl.SignUp import Mutation as signup #its ok
+from users.Api.GraphQl.setNotificationStatus import Mutation as set_notification_status #its ok
 from users.Api.GraphQl.updateprofile import Mutation as update_profile
 
-class Query(logout,query_video,  
+class Query(logout,
+            query_video,  
             query_competition,
             query_question,
             query_news,
@@ -36,6 +38,7 @@ class Query(logout,query_video,
 
 class Mutation(getphone, #create user
                 signup, # create token
+                set_notification_status,  # update user
                 update_profile,  # update user
                 answer_register,
                 mutate_sendpush,

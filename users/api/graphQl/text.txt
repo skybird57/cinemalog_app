@@ -1,0 +1,51 @@
+mutation getphone{
+  getPhone(phone:"09360001317"){
+    user{
+      id
+      phone
+      username
+      verifyCode
+      score
+      image
+    }
+  }
+}
+
+mutation signup{
+  signup(input:{phone:"09360001315",deviceId:"53y4646g3g3tg35fwf",deviceType:1,validToken:"4534f3g5hy755h65h"}){
+    userSignUp{
+      user {
+        phone
+      }
+      validToken
+      deviceId
+      deviceType
+      token
+    }
+  }
+}
+
+mutation setNotifyStatus{
+  Setnotificationstatus(input:{status:true},userId:1,token:"65858aad5dca4d69ac94ab819b747ab1"){
+    user{
+      id
+      username
+      phone
+      notificationStatus
+      score
+    }
+  }
+}
+
+query logout{
+  logout(userId:1,token:"2e23d9360ec04e14ad27895c7f7e9ecb"){
+    id
+    user {
+      id
+    }
+    token
+    validToken
+    deviceId
+    deviceType
+  }
+}

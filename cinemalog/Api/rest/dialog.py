@@ -10,7 +10,7 @@ from users.Api.Rest.checkUserToken import checkUserToken
 #list of videos
 class VideoList(APIView):    
     def get(self, request,format=None):   
-        userId=request.query_params.get('userid')  #get user
+        userId=request.query_params.get('userId')  #get user
         token=request.query_params.get('token')   # get token
         if not checkUserToken(userId,token):  # check if ok
             return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)
@@ -21,7 +21,7 @@ class VideoList(APIView):
 # videoDetails and increament video views
 class VideoDetail(APIView):
     def get(self,request,id,format=None):
-        userId=request.query_params.get('userid')  # get user
+        userId=request.query_params.get('userId')  # get user
         token=request.query_params.get('token')  # get token
         if not checkUserToken(userId,token):   # check if ok
             return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)
@@ -39,7 +39,9 @@ class VideoDetail(APIView):
             except Video.DoesNotExist:
                 pass
         return Response ("Id is not valid",status=status.HTTP_400_BAD_REQUEST)  # if video id is invalid
-    
+
+
+
 from datetime import datetime  # use for viewAt field
 def videoViewIncreament(userId,videoId):
     if userId and videoId is not None:  # check parameters

@@ -3,7 +3,7 @@ from users.models import CustomUser,CustomUserToken
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model=CustomUser
-        fields=('id','username','phone','verifyCode','image')
+        fields=('id','username','phone','notification_status','verifyCode','image')
 
 
 

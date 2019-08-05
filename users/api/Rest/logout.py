@@ -19,8 +19,10 @@ class Logout(APIView):
             return Response("device id or token is invalid",status=status.HTTP_400_BAD_REQUEST) #problem 
     
     def put(self,request,format=None):
-        deviceId=request.query_params.get('deviceId')  # get device id from request
+        userId=request.query_params.get('userId')  # get device id from request
         token=request.query_params.get('token') # get token from rquest
+        if not checkUserToken(userId,token):   # check permission
+            raise Exception("user id or token is invalid")
         try:
             token_instance=CustomUserToken.objects.get(token=token)  # find user token
             token_instance.token="None"

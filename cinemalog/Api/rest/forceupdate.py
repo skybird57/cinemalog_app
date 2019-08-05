@@ -22,11 +22,11 @@ class ForceUpdate(APIView):
             status=1
             message="force update"
             link="https:\\updatelink"
-        elif float(version)== serializer_instance.data['required_version']:
+        elif float(version)>= serializer_instance.data['required_version'] and float(version)< serializer_instance.data['last_version'] :
             status=2
             message="it's better to update"
             link="https:\\updatelink"
-        elif float(version)== serializer_instance.data['last_version']:
+        elif float(version)>= serializer_instance.data['last_version']:
             status=3
             message="it's ok"
             link=""

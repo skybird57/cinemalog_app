@@ -7,7 +7,7 @@ from users.Api.Rest.checkUserToken import checkUserToken
 
 class QuestionList(APIView):
     def get(self, request,format=None):
-        userId=request.query_params.get('userid')
+        userId=request.query_params.get('userId')
         token=request.query_params.get('token')
         compId=request.query_params.get('compId')
         if not checkUserToken(userId,token):
@@ -22,7 +22,7 @@ class QuestionList(APIView):
         return Response("Competition ID is invalid",status=status.HTTP_400_BAD_REQUEST)
 class QuestionDetail(APIView):
     def get(self,request,id,format=None):
-        userId=request.query_params.get('userid')
+        userId=request.query_params.get('userId')
         token=request.query_params.get('token')
         if not checkUserToken(userId,token):
              return Response('Your user_id or token is invalid',status=status.HTTP_401_UNAUTHORIZED)

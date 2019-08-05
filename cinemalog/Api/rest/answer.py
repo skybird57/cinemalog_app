@@ -10,7 +10,7 @@ class RegisterAnswer(APIView):
     def post(self,request,format=None):  # get answers jason
         #try:
             userScore=0 # define local score
-            userId=request.query_params.get('userid')
+            userId=request.query_params.get('userId')
             token=request.query_params.get('token')
             if not checkUserToken(userId,token):  # check permission
                 raise Exception("user id or token is invalid")  
@@ -47,7 +47,7 @@ class RegisterAnswer(APIView):
 def calculateScore(userId,questionId,answerId):  # calculate user score
         question=Question.objects.get(pk=questionId) # get question scores
         user=CustomUser.objects.get(pk=userId) # get userscore
-        if answerId==question.correct_answer:  # check answer
+        if str(answerId)==question.correct_answer:  # check answer
             user.score+=question.score_ca  # add score
             print(user.score)
         else: 
