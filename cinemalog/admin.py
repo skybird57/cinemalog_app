@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Video,VideoView,Competition,Question,Gift,SendPush,SendAdv
+from .models import Video,VideoView,Competition,Question,Gift,SendPush,SendAdv,Plan,UserPlan
 from .models import UserAnswer,ApplicationVersion,News,NewsView
 from django_jalali.admin import JDateFieldListFilter # user persian calendar in search admin
 from rangefilter.filter import DateRangeFilter  #range for date,pip install django-admin-rangefilter
@@ -213,7 +213,15 @@ class NewsAdmin(admin.ModelAdmin):
 class NewsViewAdmin(admin.ModelAdmin):
     list_display=('user','news')
 
-   
+class PlanAdmin(admin.ModelAdmin):
+    list_display=('title','typee','days','price')
+    search_fields=('title',)
+
+class UserPlanAdmin(admin.ModelAdmin):
+    list_display=('user','plan','buy_at','expire_at','status')
+    search_fields=('user','plan',)
+    list_filter=('buy_at','expire_at')
+
 admin.site.register(Video,VideoAdmin)
 admin.site.register(VideoView,VideoViewAdmin)
 admin.site.register(Competition,CompetitionAdmin)
@@ -225,3 +233,5 @@ admin.site.register(SendAdv,SendAdvAdmin)
 admin.site.register(ApplicationVersion,ApplicationVersionAdmin)
 admin.site.register(News,NewsAdmin)
 admin.site.register(NewsView,NewsViewAdmin)
+admin.site.register(Plan,PlanAdmin)
+admin.site.register(UserPlan,UserPlanAdmin)

@@ -181,3 +181,28 @@ class NewsView(models.Model):
     class Meta:
         verbose_name=_('News user view')
         verbose_name_plural=_('News user views')
+
+class Plan(models.Model):
+    title=models.CharField(_('plantitle'),max_length=50)
+    typee=models.IntegerField(_('plantype'))
+    days=models.IntegerField(_('plandays'))
+    price=models.CharField(_('planprice'),max_length=10)
+    
+    def __str__(self):
+        return self.title
+    
+    class Meta:
+        verbose_name=_('Plan')
+        verbose_name_plural=_('Plans')
+class UserPlan(models.Model):
+    STATUS=((0,'Active'),(1,'Expire'),(2,'Near to expire'))
+    plan=models.ForeignKey(Plan,on_delete=models.CASCADE,verbose_name=_('planId'))
+    user=models.ForeignKey(CustomUser,on_delete=models.CASCADE,verbose_name=_('userId'))
+    buy_at=models.DateTimeField(_('userplanbuyat'))
+    expire_at=models.DateTimeField(_('userplanexpireat'))
+    status=models.IntegerField(_('userplanstatus'),choices=STATUS)
+    def __str__(self):
+        return str(self.plan)+str(self.user)+str(self.buy_at)+str(self.expire_at)+str(self.status)
+    class Meta:
+        verbose_name=_('User Plan')
+        verbose_name_plural=_('User Plans')

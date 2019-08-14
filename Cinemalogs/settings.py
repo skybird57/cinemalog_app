@@ -83,6 +83,16 @@ WSGI_APPLICATION = 'Cinemalogs.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
+
+# connect to mongodb database
+#DATABASES = {
+#     'default' : {
+#      'ENGINE' : 'djongo',
+#      'NAME' : 'cinemalogs'
+#   }
+#}
+
+# connect to sqlite database
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',

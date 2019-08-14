@@ -1,6 +1,6 @@
 from django.conf.urls import url
 from django.urls import path,include
-from cinemalog.Api.rest import forceupdate,dialog,competition,question,answer,news
+from cinemalog.Api.rest import forceupdate,dialog,competition,question,answer,news,plan
 
 
 urlpatterns=[
@@ -14,4 +14,6 @@ urlpatterns=[
     path('answer',answer.RegisterAnswer.as_view(),name="answer register"),
     path('news',news.NewsList.as_view(),name="news list"),
     url(r'^news/(?P<id>[0-9]+)$',news.NewsDetail.as_view(),name='detail news'),
+    path('plans',plan.PlanList.as_view(),name="plan list"),
+    path('userplan',plan.UserPlanDetail.as_view(),name="user plan"),
 ]
