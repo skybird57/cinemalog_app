@@ -17,7 +17,7 @@ class CustomUser(models.Model):
 
 
     def __str__(self):
-        return self.phone+'___score_'+str(self.score)
+        return self.phone  #+'___score_'+str(self.score)
     class Meta:
         verbose_name=_('CustomUser')
         verbose_name_plural=_('CustomUsers')

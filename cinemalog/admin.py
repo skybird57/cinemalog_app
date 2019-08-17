@@ -220,7 +220,7 @@ class PlanAdmin(admin.ModelAdmin):
 class UserPlanAdmin(admin.ModelAdmin):
     list_display=('user','plan','buy_at','expire_at','status')
     search_fields=('user','plan',)
-    list_filter=('buy_at','expire_at')
+    list_filter=('buy_at','expire_at','status')
 
 admin.site.register(Video,VideoAdmin)
 admin.site.register(VideoView,VideoViewAdmin)

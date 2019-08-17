@@ -39,8 +39,9 @@ class getphone(APIView):
             user_instance=createuser(phone)    # create user if not exist
             serializer_instance=UserSerializer(user_instance)
             if serializer_instance:
-                return Response(UserSerializer.data,status=status.HTTP_201_CREATED)
-            return Response(status=status.HTTP_400_BAD_REQUEST)
+                return Response(serializer_instance.data,status=status.HTTP_201_CREATED)
+            else:
+                return Response(serializer_instance.error,status=status.HTTP_400_BAD_REQUEST)
 
 # create new user 
 from datetime import datetime   

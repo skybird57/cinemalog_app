@@ -72,3 +72,6 @@ def createNewUserPlan(userId,planId,days,lastExpiredate):  # create new user pla
     instance.status=0
     instance.save()
     return instance
+    
+    
+    

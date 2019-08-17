@@ -54,5 +54,5 @@ import time
 def test():
     while True:
         crawler()
-        print("salam")
+        print("Thread start")
         time.sleep(60*60)
