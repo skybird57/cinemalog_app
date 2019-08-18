@@ -10,8 +10,8 @@ class RegisterAnswer(APIView):
     def post(self,request,format=None):  # get answers jason
         #try:
             userScore=0 # define local score
-            userId=request.query_params.get('userId')
-            token=request.query_params.get('token')
+            userId=request.headers.get('userId')
+            token=request.headers.get('token')
             if not checkUserToken(userId,token):  # check permission
                 raise Exception("user id or token is invalid")  
             data=request.data['answers']    #split json

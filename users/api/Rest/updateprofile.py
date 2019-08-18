@@ -14,19 +14,20 @@ import random
 class UpdateProfile(APIView):  # get record
     def get(self,request,format=None):
         try:
-            instance=CustomUser.objects.get(pk=request.query_params.get('userId')) # get user
+            instance=CustomUser.objects.get(pk=request.headers.get('userId')) # get user
             serializer_instance=UserSerializer(instance)
             return Response(serializer_instance.data,status=status.HTTP_200_OK) #show user
         except CustomUser.DoesNotExist: 
-            return Response("user id is not valid",status=status.HTTP_400_BAD_REQUEST) # show error
+            return Response("user id is not valid",status=status.HTTP_404_NOT_FOUND) # show error
     
     def put(self,request,format=None):  # update function
-        userId=request.query_params.get('userId')   # get parameters
-        token=request.query_params.get('token')
-        
+        userId=request.headers.get('userId')   # get parameters
+        token=request.headers.get('token')
+        if not userId:
+            raise Exception("user id is not sent")
         if not checkUserToken(userId,token):   # check permission
             raise Exception("user id or token is invalid")
-        instance=CustomUser.objects.get(pk=request.query_params.get('userId')) #get user record
+        instance=CustomUser.objects.get(pk=userId) #get user record
         serializer_inctance=UserSerializer(instance,data=request.data)  # srialize with new data
         if serializer_inctance.is_valid():
             serializer_inctance.save(updated_at=datetime.today())  # update with new data

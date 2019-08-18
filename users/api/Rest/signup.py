@@ -7,10 +7,10 @@ import re # use regex for phone format
 class SignUp(APIView):
     # get method
     def get(self,request,format=None):
-        phone=request.query_params.get('phone') # get phone from request
-        deviceType=request.query_params.get('deviceType')  # get device type from request
-        deviceId=request.query_params.get('deviceId')  # get device id from request
-        validToken=request.query_params.get('validToken') # get valid token from rquest
+        phone=request.headers.get('phone') # get phone from request
+        deviceType=request.headers.get('deviceType')  # get device type from request
+        deviceId=request.headers.get('deviceId')  # get device id from request
+        validToken=request.headers.get('validToken') # get valid token from rquest
         if not phone:
             return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
@@ -32,10 +32,10 @@ class SignUp(APIView):
             return Response("Fisrt send phone to register",status=status.HTTP_400_BAD_REQUEST) #problem
 
     def post(self,request,format=None):
-        phone=request.query_params.get('phone') # get phone from request
-        deviceType=request.query_params.get('deviceType')  # get device type from request
-        deviceId=request.query_params.get('deviceId')  # get device id from request
-        validToken=request.query_params.get('validToken') # get valid token from rquest
+        phone=request.data.get('phone') # get phone from request
+        deviceType=request.data.get('deviceType')  # get device type from request
+        deviceId=request.data.get('deviceId')  # get device id from request
+        validToken=request.data.get('validToken') # get valid token from rquest
         if not phone:
             return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format

@@ -8,8 +8,8 @@ from cinemalog.models import Plan,UserPlan
 from users.Api.Rest.checkUserToken import checkUserToken
 class PlanList(APIView):    # get all plans
     def get(self,request,format=None):
-        userId=request.query_params.get('userId') #get parameters
-        token=request.query_params.get('token')
+        userId=request.headers.get('userId') #get parameters
+        token=request.headers.get('token')
         if not checkUserToken(userId,token):   #check permission
             raise Exception("userid or token is invalid")
         instance_plan=Plan.objects.all()   #get list of plans
@@ -18,8 +18,8 @@ class PlanList(APIView):    # get all plans
 
 class UserPlanDetail(APIView):  
     def get(self,request,format=None):    # get latest expire date(if we have two expite date give the latest one)
-        userId=request.query_params.get('userId')   #get parameters
-        token=request.query_params.get('token')
+        userId=request.headers.get('userId')   #get parameters
+        token=request.headers.get('token')
         if not checkUserToken(userId,token):  #check permissions
             raise Exception("userid or token is invalid")
         instance=expireDate(userId)    #get latest expire date is available
@@ -29,9 +29,9 @@ class UserPlanDetail(APIView):
         else:
             return Response("Expire Pleae buy new plan")   #if coudn't find any plan
     def post(self,request,format=None):   #buy new plan
-        userId=request.query_params.get('userId')  # get parameters
-        token=request.query_params.get('token')
-        planId=request.query_params.get('planId')
+        userId=request.headers.get('userId')  # get parameters
+        token=request.headers.get('token')
+        planId=request.headers.get('planId')
         if not checkUserToken(userId,token):   #check permission
             raise Exception("userid or token is invalid")
         instance_userplan=UserPlan.objects.filter(user_id=userId).exclude(status=1) #get records which status!=expire

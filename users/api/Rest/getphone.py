@@ -9,12 +9,13 @@ from users.Api.Rest.serializers import UserSerializer,UserTokenSerializer # seri
 
 class getphone(APIView): 
     def get(self,request,format=None):
-        phone=request.query_params.get('phone') # get phone from request
+        phone=request.headers.get('phone') # get phone from request.header
+        #phone=request.data['phone']  # get phone from request.data
         if not phone:
-            return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
+            return Response('parameter is not sent',status=status.HTTP_400_BAD_REQUEST)# if param wong
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
         if not p:
-            return Response("Phone format is wrong",status=status.HTTP_404_NOT_FOUND)
+            return Response("Phone format is wrong",status=status.HTTP_400_BAD_REQUEST)
         try:
             user_instance=CustomUser.objects.get(phone=phone)
             serializer_instance=UserSerializer(user_instance)
@@ -23,12 +24,12 @@ class getphone(APIView):
             return Response("user is invalid change you request method",status=status.HTTP_400_BAD_REQUEST)
 
     def post(self,request,format=None):
-        phone=request.query_params.get('phone') # get phone from request
+        phone=request.data['phone'] # get phone from request.data
         if not phone:
-            return Response('parameter is not sent',status=status.HTTP_404_NOT_FOUND)# if param wong
+            return Response('parameter is not sent',status=status.HTTP_400_BAD_REQUEST)# if param wong
         p=re.search('^(09|989)[0-3]{1}[0-9]{8}$',phone)  # phone format
         if not p:
-            return Response("Phone format is wrong",status=status.HTTP_404_NOT_FOUND)
+            return Response("Phone format is wrong",status=status.HTTP_400_BAD_REQUEST)
         try:
             user_instance=CustomUser.objects.get(phone=phone)
             user_instance.verifyCode=random.randint(1000,9999)

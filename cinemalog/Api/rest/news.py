@@ -10,8 +10,8 @@ from users.Api.Rest.checkUserToken import checkUserToken
 #list of News
 class NewsList(APIView):    
     def get(self, request,format=None):   
-        userId=request.query_params.get('userId')  #get user
-        token=request.query_params.get('token')   # get token
+        userId=request.headers.get('userId')  #get user
+        token=request.headers.get('token')   # get token
         if not checkUserToken(userId,token):  # check if ok
             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
         instance=News.objects.all()   # get all records
@@ -21,8 +21,8 @@ class NewsList(APIView):
 # videoDetails and increament video views
 class NewsDetail(APIView):
     def get(self,request,id,format=None):
-        userId=request.query_params.get('userId')  # get user
-        token=request.query_params.get('token')  # get token
+        userId=request.headers.get('userId')  # get user
+        token=request.headers.get('token')  # get token
         if not checkUserToken(userId,token):   # check if ok
             return Response('Your user_id or token is invalid',status=status.HTTP_400_BAD_REQUEST)
         if id is not None:
