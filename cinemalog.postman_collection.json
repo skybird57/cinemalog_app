@@ -6,265 +6,7 @@
 	},
 	"item": [
 		{
-			"name": "Questions",
-			"item": [
-				{
-					"name": "add questions",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"auth": {
-							"type": "noauth"
-						},
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							},
-							{
-								"key": "Authorization",
-								"value": "Token sdfrgegrw4tg354546h46h",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\r\n    \"question\": \"کارگردان فیلم کیست؟\",\r\n    \"answer1\": \"هاشمی\",\r\n    \"answer2\": \"آبیار\",\r\n    \"answer3\": \"جعفری\",\r\n    \"answer4\": \"کیارستمی\",\r\n    \"correct_answer\": \"جعفری\",\r\n    \"score_ca\": 4,\r\n    \"score_wa\": -4,\r\n    \"Competition\": 1\r\n}"
-						},
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/questions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"questions"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "question list",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/questions",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"questions"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Videos",
-			"item": [
-				{
-					"name": "video list",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/videos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"videos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "video detail",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/x-www-form-urlencoded",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/videos/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"videos",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "add video",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file_name",
-									"contentType": "multipart/form-data",
-									"type": "file",
-									"src": "/E:/Amir.txt"
-								},
-								{
-									"key": "film_name",
-									"value": "سالوادور",
-									"contentType": "",
-									"type": "text"
-								},
-								{
-									"key": "desc",
-									"value": "کمدی",
-									"type": "text"
-								},
-								{
-									"key": "cover_video",
-									"contentType": "multipart/form-data",
-									"type": "file",
-									"src": "/E:/Amir.txt"
-								},
-								{
-									"key": "create_at",
-									"value": "2019-06-03",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/videos",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"videos"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "update video",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "Content-Type",
-								"name": "Content-Type",
-								"value": "application/json",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "file_name",
-									"type": "file",
-									"src": "/E:/serialize.txt"
-								},
-								{
-									"key": "film_name",
-									"value": "hayollaaaaa",
-									"type": "text"
-								},
-								{
-									"key": "cover_video",
-									"type": "file",
-									"src": "/E:/serialize.txt"
-								},
-								{
-									"key": "desc",
-									"value": "comedy drum",
-									"type": "text"
-								},
-								{
-									"key": "create_at",
-									"value": "2019-05-21",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/videos/2/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"videos",
-								"2",
-								""
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "delete video",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:8000/cinemalog/videos/11/",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8000",
-							"path": [
-								"cinemalog",
-								"videos",
-								"11",
-								""
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "Admin APIs",
-			"item": []
-		},
-		{
-			"name": "APIs",
+			"name": "Mobile APIs",
 			"item": [
 				{
 					"name": "users",
@@ -282,10 +24,20 @@
 												"name": "Content-Type",
 												"type": "text",
 												"value": "application/json"
+											},
+											{
+												"key": "userId",
+												"value": "3",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "bd3b25156ed341d88844c87a52f6b912",
+												"equals": true
 											}
 										],
 										"url": {
-											"raw": "http://localhost:8000/user/api/logout?userid=1&token=9ac832284c70478fb4cb0b83e4c341d2",
+											"raw": "http://localhost:8000/user/api/logout",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -295,16 +47,6 @@
 												"user",
 												"api",
 												"logout"
-											],
-											"query": [
-												{
-													"key": "userid",
-													"value": "1"
-												},
-												{
-													"key": "token",
-													"value": "9ac832284c70478fb4cb0b83e4c341d2"
-												}
 											]
 										}
 									},
@@ -334,21 +76,31 @@
 												"key": "Content-Type",
 												"value": "application/json",
 												"type": "text"
+											},
+											{
+												"key": "phone",
+												"value": "09360001315",
+												"equals": true
+											},
+											{
+												"key": "deviceId",
+												"value": "53y4646g3g3tg35fwf",
+												"equals": true
+											},
+											{
+												"key": "validToken",
+												"value": "4534f3g5hy755h65h",
+												"equals": true
+											},
+											{
+												"key": "deviceType",
+												"value": "0",
+												"equals": true
 											}
 										],
-										"url": {
-											"raw": "http://localhost:8000/user/api/signup?phone=09360001315&deviceId=53y4646g3g3tg35fwf&validToken=4534f3g5hy755h65h&deviceType=0",
-											"protocol": "http",
-											"host": [
-												"localhost"
-											],
-											"port": "8000",
-											"path": [
-												"user",
-												"api",
-												"signup"
-											],
-											"query": [
+										"body": {
+											"mode": "formdata",
+											"formdata": [
 												{
 													"key": "phone",
 													"value": "09360001315"
@@ -366,6 +118,19 @@
 													"value": "0"
 												}
 											]
+										},
+										"url": {
+											"raw": "http://localhost:8000/user/api/signup",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"user",
+												"api",
+												"signup"
+											]
 										}
 									},
 									"response": []
@@ -373,10 +138,26 @@
 								{
 									"name": "R get phone",
 									"request": {
-										"method": "GET",
-										"header": [],
+										"method": "POST",
+										"header": [
+											{
+												"key": "phone",
+												"value": "09360001315",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "formdata",
+											"formdata": [
+												{
+													"key": "phone",
+													"value": "09360001315",
+													"type": "text"
+												}
+											]
+										},
 										"url": {
-											"raw": "http://localhost:8000/user/api/getphone?phone=09360001315",
+											"raw": "http://localhost:8000/user/api/getphone",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -386,12 +167,6 @@
 												"user",
 												"api",
 												"getphone"
-											],
-											"query": [
-												{
-													"key": "phone",
-													"value": "09360001315"
-												}
 											]
 										}
 									},
@@ -401,13 +176,24 @@
 									"name": "R update profile",
 									"request": {
 										"method": "PUT",
-										"header": [],
+										"header": [
+											{
+												"key": "userId",
+												"value": "1",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "65858aad5dca4d69ac94ab819b747ab1",
+												"equals": true
+											}
+										],
 										"body": {
 											"mode": "formdata",
 											"formdata": [
 												{
 													"key": "username",
-													"value": "hosein",
+													"value": "aaaa",
 													"type": "text"
 												},
 												{
@@ -424,7 +210,7 @@
 											]
 										},
 										"url": {
-											"raw": "http://localhost:8000/user/api/updateprofile?userId=1&token=65858aad5dca4d69ac94ab819b747ab1",
+											"raw": "http://localhost:8000/user/api/updateprofile",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -434,16 +220,6 @@
 												"user",
 												"api",
 												"updateprofile"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "1"
-												},
-												{
-													"key": "token",
-													"value": "65858aad5dca4d69ac94ab819b747ab1"
-												}
 											]
 										}
 									},
@@ -455,10 +231,14 @@
 										"method": "PUT",
 										"header": [
 											{
-												"key": "Content-Type",
-												"name": "Content-Type",
-												"value": "application/x-www-form-urlencoded",
-												"type": "text"
+												"key": "userId",
+												"value": "1",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "65858aad5dca4d69ac94ab819b747ab1",
+												"equals": true
 											}
 										],
 										"body": {
@@ -477,7 +257,7 @@
 											]
 										},
 										"url": {
-											"raw": "http://localhost:8000/user/api/setNotificationStatus?userId=1&token=65858aad5dca4d69ac94ab819b747ab1",
+											"raw": "http://localhost:8000/user/api/setNotificationStatus",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -487,16 +267,6 @@
 												"user",
 												"api",
 												"setNotificationStatus"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "1"
-												},
-												{
-													"key": "token",
-													"value": "65858aad5dca4d69ac94ab819b747ab1"
-												}
 											]
 										}
 									},
@@ -639,16 +409,13 @@
 								},
 								{
 									"name": "G set notification status",
-									"protocolProfileBehavior": {
-										"disableBodyPruning": true
-									},
 									"request": {
-										"method": "GET",
+										"method": "POST",
 										"header": [],
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "mutation setNotifyStatus{\r\n  Setnotificationstatus(input:{status:true},userId:1,token:\"65858aad5dca4d69ac94ab819b747ab1\"){\r\n    user{\r\n      id\r\n      username\r\n      phone\r\n      notificationStatus\r\n    }\r\n  }\r\n}",
+												"query": "mutation setNotifyStatus{\r\n  Setnotificationstatus(input:{status:true},userId:2,token:\"ddfd93f8e1e7451d89e54f20efc6b95b\"){\r\n    user{\r\n      id\r\n      username\r\n      phone\r\n      notificationStatus\r\n    }\r\n  }\r\n}",
 												"variables": ""
 											}
 										},
@@ -739,9 +506,20 @@
 									"name": "R Dialogs",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "userId",
+												"value": "5",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "da81ddf0527446a8b914eab8dfc0f7b1",
+												"equals": true
+											}
+										],
 										"url": {
-											"raw": "http://localhost:8000/cinemalog/api/dialog/15?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"raw": "http://localhost:8000/cinemalog/api/dialog/15",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -752,16 +530,6 @@
 												"api",
 												"dialog",
 												"15"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "5"
-												},
-												{
-													"key": "token",
-													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
-												}
 											]
 										}
 									},
@@ -771,9 +539,20 @@
 									"name": "R competitions",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "userId",
+												"value": "5",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "da81ddf0527446a8b914eab8dfc0f7b1",
+												"equals": true
+											}
+										],
 										"url": {
-											"raw": "http://localhost:8000/cinemalog/api/competition?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"raw": "http://localhost:8000/cinemalog/api/competition",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -783,16 +562,6 @@
 												"cinemalog",
 												"api",
 												"competition"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "5"
-												},
-												{
-													"key": "token",
-													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
-												}
 											]
 										}
 									},
@@ -802,9 +571,25 @@
 									"name": "R questions",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "userId",
+												"value": "5",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "da81ddf0527446a8b914eab8dfc0f7b1",
+												"equals": true
+											},
+											{
+												"key": "compId",
+												"value": "7",
+												"equals": true
+											}
+										],
 										"url": {
-											"raw": "http://localhost:8000/cinemalog/api/question?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1&compId=7",
+											"raw": "http://localhost:8000/cinemalog/api/question",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -814,20 +599,6 @@
 												"cinemalog",
 												"api",
 												"question"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "5"
-												},
-												{
-													"key": "token",
-													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
-												},
-												{
-													"key": "compId",
-													"value": "7"
-												}
 											]
 										}
 									},
@@ -837,9 +608,20 @@
 									"name": "R news",
 									"request": {
 										"method": "GET",
-										"header": [],
+										"header": [
+											{
+												"key": "userId",
+												"value": "5",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "da81ddf0527446a8b914eab8dfc0f7b1",
+												"equals": true
+											}
+										],
 										"url": {
-											"raw": "http://localhost:8000/cinemalog/api/news/22?userId=5&token=da81ddf0527446a8b914eab8dfc0f7b1",
+											"raw": "http://localhost:8000/cinemalog/api/news",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -848,18 +630,7 @@
 											"path": [
 												"cinemalog",
 												"api",
-												"news",
-												"22"
-											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "5"
-												},
-												{
-													"key": "token",
-													"value": "da81ddf0527446a8b914eab8dfc0f7b1"
-												}
+												"news"
 											]
 										}
 									},
@@ -875,6 +646,16 @@
 												"name": "Content-Type",
 												"value": "application/json",
 												"type": "text"
+											},
+											{
+												"key": "userId",
+												"value": "4",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "9e75fa9880bd4732953733eaccec2457",
+												"equals": true
 											}
 										],
 										"body": {
@@ -882,7 +663,7 @@
 											"raw": "{\r\n    \"answers\": [\r\n        {\r\n            \"cycle_question_id\": \"8\",\r\n            \"data\": [\r\n                {\r\n                    \"question\": 3,\r\n                    \"answer\": 2\r\n                }\r\n            ]\r\n        },\r\n        {\r\n            \"cycle_question_id\": \"7\",\r\n            \"data\": [\r\n                {\r\n                    \"question\": 4,\r\n                    \"answer\": 1\r\n                },\r\n                {\r\n                    \"question\": 5,\r\n                    \"answer\": 1\r\n                }\r\n            ]\r\n        }\r\n    ]\r\n}"
 										},
 										"url": {
-											"raw": "http://localhost:8000/cinemalog/api/answer?userId=3&token=bd3b25156ed341d88844c87a52f6b912",
+											"raw": "http://localhost:8000/cinemalog/api/answer",
 											"protocol": "http",
 											"host": [
 												"localhost"
@@ -892,16 +673,75 @@
 												"cinemalog",
 												"api",
 												"answer"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R plans",
+									"request": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "userId",
+												"value": "5",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "da81ddf0527446a8b914eab8dfc0f7b1",
+												"equals": true
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/plans",
+											"protocol": "http",
+											"host": [
+												"localhost"
 											],
-											"query": [
-												{
-													"key": "userId",
-													"value": "3"
-												},
-												{
-													"key": "token",
-													"value": "bd3b25156ed341d88844c87a52f6b912"
-												}
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"plans"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "R user plans",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "userId",
+												"value": "6",
+												"equals": true
+											},
+											{
+												"key": "token",
+												"value": "37e399b848e94e5f8ad3458db4ce9cf8",
+												"equals": true
+											},
+											{
+												"key": "planId",
+												"type": "text",
+												"value": "1"
+											}
+										],
+										"url": {
+											"raw": "http://localhost:8000/cinemalog/api/userplan",
+											"protocol": "http",
+											"host": [
+												"localhost"
+											],
+											"port": "8000",
+											"path": [
+												"cinemalog",
+												"api",
+												"userplan"
 											]
 										}
 									},
@@ -955,7 +795,7 @@
 										"body": {
 											"mode": "graphql",
 											"graphql": {
-												"query": "query videos{\r\n  videos(userId:5,token:\"da81ddf0527446a8b914eab8dfc0f7b1\"){\r\n    id\r\n    filmName\r\n    fileName\r\n    \r\n  }\r\n}",
+												"query": "query videos{\r\n  videos(userId:1,token:\"4b11a06e6c5b4f9a822a8631116516f7\"){\r\n    id\r\n    filmName\r\n    fileName\r\n    desc\r\n    published\r\n    coverVideo\r\n    view\r\n  }\r\n}",
 												"variables": ""
 											}
 										},

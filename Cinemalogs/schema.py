@@ -30,8 +30,8 @@ class Query(logout,
             query_competition,
             query_question,
             query_news,
-            query_sendpush,
-            query_sendadv,
+            #query_sendpush,
+            #query_sendadv,
             query_application,
             graphene.ObjectType):
     pass
@@ -41,9 +41,9 @@ class Mutation(getphone, #create user
                 set_notification_status,  # update user
                 update_profile,  # update user
                 answer_register,
-                mutate_sendpush,
-                mutate_sendadv,
-                mutate_application,
+                #mutate_sendpush,
+                #mutate_sendadv,
+                #mutate_application,
                 graphene.ObjectType):
     
     token_auth = graphql_jwt.ObtainJSONWebToken.Field()

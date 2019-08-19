@@ -34,7 +34,7 @@ urlpatterns = [
     path('user/',include('users.urls')),
       #docs of api /swagger-docs/
     url(r'swagger-docs/', schema_view),
-    url(r'core-docs/', include_docs_urls(title='Polls API')),
+    url(r'core-docs/', include_docs_urls(title='Cinemalog API')),
 ]
 
 #show cover-video in dialog when you click on it

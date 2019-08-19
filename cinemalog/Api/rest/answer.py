@@ -1,5 +1,6 @@
 from rest_framework.decorators import APIView
 from rest_framework.response import Response
+from rest_framework import status
 #classes and Functions
 from cinemalog.models import UserAnswer,Question
 from cinemalog.Api.rest.serializers import UserAnswerSerializer
@@ -41,7 +42,7 @@ class RegisterAnswer(APIView):
                             userScore=calculateScore(userId,questionId,answerId) # calculate user score
                         except Exception:
                             raise Exception("couldnt import,wrong information")
-            return Response(userScore)  # return user score
+            return Response(userScore,status=status.HTTP_201_CREATED)  # return user score
 
 
 def calculateScore(userId,questionId,answerId):  # calculate user score

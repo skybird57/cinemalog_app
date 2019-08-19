@@ -21,7 +21,7 @@ class Video(models.Model):
     published=models.BooleanField(_('videopublished'),default=False)
     published_at=jmodels.jDateField(_('videopublishdate'),blank=True,null=True) 
     #use upload_to
-    file_name=models.FileField(_('videofilename'),upload_to=file_location,max_length=50)
+    file_name=models.FileField(_('videofilename'),upload_to=file_location,blank=True, null=True,max_length=50)
     cover_video=models.FileField(_('videocver'),upload_to=file_location,blank=True,null=True,max_length=50)
     #save by admin.py method save
     #file_name=models.FileField(_('videofilename'),max_length=50)

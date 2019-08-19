@@ -31,7 +31,7 @@ def crawler():
                             break
                         else:   
                             save_before=False
-                    print(save_before)
+                    #print(save_before)
                     if not save_before:        
                         news=News()
                         #append_to_file(result,container.title.string)

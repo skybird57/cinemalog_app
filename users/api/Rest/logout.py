@@ -6,8 +6,8 @@ from users.Api.Rest.serializers import UserTokenSerializer
 from users.Api.Rest.checkUserToken import checkUserToken
 class Logout(APIView):
     def get(self,request,format=None):
-        deviceId=request.query_params.get('deviceId')  # get device id from request
-        token=request.query_params.get('token') # get token from rquest
+        #deviceId=request.headers.get('deviceId')  # get device id from request
+        token=request.headers.get('token') # get token from rquest
         try:
             token_instance=CustomUserToken.objects.get(token=token)  # find user token
             serializer_tokeninstance=UserTokenSerializer(token_instance)  # serialize token
@@ -19,8 +19,8 @@ class Logout(APIView):
             return Response("device id or token is invalid",status=status.HTTP_400_BAD_REQUEST) #problem 
     
     def put(self,request,format=None):
-        userId=request.query_params.get('userId')  # get device id from request
-        token=request.query_params.get('token') # get token from rquest
+        userId=request.headers.get('userId')  # get device id from request
+        token=request.headers.get('token') # get token from rquest
         if not checkUserToken(userId,token):   # check permission
             raise Exception("user id or token is invalid")
         try:
